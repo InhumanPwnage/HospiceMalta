@@ -1,0 +1,16 @@
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\BusinessLayer.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\BusinessLayer.pdb
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\Common.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\DataLayer.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\EntityFramework.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\Common.pdb
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\DataLayer.pdb
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\EntityFramework.xml
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\bin\Debug\Newtonsoft.Json.xml
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\obj\Debug\BusinessLayer.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\BusinessLayer\obj\Debug\BusinessLayer.pdb

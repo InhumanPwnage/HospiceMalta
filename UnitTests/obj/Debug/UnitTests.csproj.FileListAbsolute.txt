@@ -1,0 +1,16 @@
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\UnitTests.dll.config
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\BusinessLayer.dll
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\Common.dll
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\EntityFramework.dll
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\DataLayer.dll
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\BusinessLayer.pdb
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\Common.pdb
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\EntityFramework.xml
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\bin\Debug\DataLayer.pdb
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\UnitTests\obj\Debug\UnitTests.pdb

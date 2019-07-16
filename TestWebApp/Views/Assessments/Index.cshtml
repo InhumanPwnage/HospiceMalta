@@ -1,0 +1,269 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Stylize.css" rel="stylesheet" />
+<script src="~/Scripts/dev/PageControl.js"></script>
+<script src="~/Scripts/dev/AsyncManagement.js"></script>
+<script src="~/Scripts/dev/InputValidation.js"></script>
+<h2 style="text-align:center;">Assessments</h2>
+
+
+<!--
+    http://forums.asp.net/t/2051241.aspx?Displaying+table+in+asp+net+MVC+view+with+scrollbar
+
+    scrollable TABLE of assessments, sorted chronologically with most recent at the top, goes here
+-->
+
+<div class="containment">
+
+    <ul class="nav nav-tabs">
+        <!-- nav-justified -->
+        <li class="active">
+            <a data-toggle="tab" href="#assessm">Assessments</a>
+        </li>
+        <li><a data-toggle="tab" href="#patient">Patient Assessments</a></li>
+        <li><a data-toggle="tab" href="#carepla">Care Plan</a></li>
+        <li><a data-toggle="tab" href="#symptom" id="sympTab">Symptomatology</a></li>
+        <li><a data-toggle="tab" href="#functio" id="funcTab">Functional Assessments</a></li>
+        <li><a data-toggle="tab" href="#general" id="geneTab">General Observations</a></li>
+        <li><a data-toggle="tab" href="#problem" id="probTab">Problems</a></li>
+        <li><a data-toggle="tab" href="#physiot" id="physTab">Physiotherapy</a></li>
+    </ul>
+    <!--
+
+    -->
+    <div class="tab-content">
+
+        <!-- Assessments-->
+        <div id="assessm" class="tab-pane fade in active">
+            <form class="form-horizontal">
+                <br />
+                <h4 style="text-align:center;">Assessments</h4>
+
+                <div id="assContent">
+                    <div id="left">
+                        <div class="form-group">
+                            <label for="assDate" class="col-sm-2 control-label">Date</label>
+                            <div class="col-md-12">
+                                <input type="date" class="form-control form-control-inline" id="assDate" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assDuration" class="col-sm-2 control-label">Duration</label>
+                            <div class="col-md-12">
+                                <input type="number" class="form-control form-control-inline" id="assDuration" step="1" min="1" max="420" maxlength="3" /> minutes
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assddlType" class="col-sm-2 control-label">Type</label>
+                            <div class="col-md-12" id="assdivType">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assConfirmed" class="col-sm-2 control-label">Confirmed</label>
+                            <div class="col-lg-6">
+                                <input type="checkbox" id="assConfirmed" class="form-control-inline" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="right">
+                        <div class="form-group form-inline">
+                            <label for="assTime" class="col-sm-2 control-label">Time</label>
+                            <div class="col-md-12">
+                                <input type="time" class="form-control form-control-inline" placeholder="Pick time" id="assTime">
+                                <button type="button" class="btn btn-default" id="btnTime" onclick="GetNewCurrentTime()"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Current Time</button>  (24h)
+                                <!--<a id="btnTime" onclick="GetNewCurrentTime()">Set Current time</a>-->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assddlOrigin" class="col-sm-2 control-label">Origin</label>
+                            <div class="col-md-12" id="assdivOrigin">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assddlWorker" class="col-sm-2 control-label">Worker</label>
+                            <div class="col-md-12" id="assdivWorker">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assConfirmDate" class="col-sm-2 control-label">Confirm Date</label>
+                            <div class="col-md-12">
+                                <input type="date" class="form-control form-control-inline" id="assConfirmDate" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="clear:both;">
+                    <label for="assDescription" class="col-sm-1 control-label">Description</label>
+                    <div class="col-md-12">
+                        <textarea maxlength="1000" rows="10" cols="100" id="assDescription" class="form-control" style="max-width: 100%; width:100%; height: 120px; resize: vertical;" placeholder="Enter text here..."></textarea>
+                    </div>
+                </div>
+
+
+                <div class="text-center">
+                    <button type="reset" class="btn btn-warning" id="btnReset" onclick="ResetTabs()"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Reset</button>
+                    <button type="button" class="btn btn-success" id="btnSave" onclick="SaveAssessment()"><span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save</button>
+                    <button type="button" class="btn btn-info" id="btnEmail" onclick="SendEmail()"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</button>
+                    <button type="button" class="btn btn-primary" id="btnNext" onclick="Next()">Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+                </div>
+
+                <br />
+                <input type="hidden" id="AssesmentId" value="" />
+            </form>
+        </div>
+
+
+        <!-- Patient Assessments-->
+        <div id="patient" class="tab-pane fade">
+            <form class="form-horizontal">
+                <br />
+                <h4 style="text-align:center;">Patient Assessments</h4>
+
+                <div id="patContent">
+                    <div id="left">
+                        <div class="form-group">
+                            <label for="patddlType" class="col-sm-2 control-label">Type</label>
+                            <div class="col-md-12" id="patType">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="right">
+                        <div class="form-group">
+                            <label for="patddlGrade" class="col-sm-2 control-label">Grade</label>
+                            <div class="col-md-12" id="patGrade">
+                                <select class="form-control form-control-inline" id="patddlTypes">
+                                    <option value="-1">Select Grade first!</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="clear:both;">
+                    <label for="patRemarks" class="col-sm-1 control-label">Remarks</label>
+                    <div class="col-md-12">
+                        <textarea maxlength="1000" rows="10" cols="100" id="patRemarks" class="form-control" style="max-width: 100%; width:100%; height: 120px; resize: vertical;" placeholder="Enter text here..."></textarea>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" id="btnPrevious" onclick="Previous()"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Previous</button>
+                    <button type="reset" class="btn btn-warning" id="btnReset" onclick="ResetTabs()"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Reset</button>
+                    <button type="submit" class="btn btn-success" id="btnSave" onclick="SavePatient()"><span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save</button>
+                    <button type="button" class="btn btn-info" id="btnEmail" onclick="SendEmail()"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</button>
+                    <button type="button" class="btn btn-primary" id="btnNext" onclick="Next()">Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+                    <!-- class="pull-right" -->
+                </div>
+                <br />
+                <input type="hidden" id="PatientAssesmentId" value="" />
+            </form>
+        </div>
+
+
+        <!-- Care Plan -->
+        <div id="carepla" class="tab-pane fade">
+            <form class="form-horizontal">
+                <br />
+                <h4 style="text-align:center;">Care Plan</h4>
+
+                <div id="carContent">
+                    <div id="left">
+                        <div class="form-group">
+                            <label for="carddlType" class="col-sm-2 control-label">Type</label>
+                            <div class="col-md-12" id="carType">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="carddlStatus" class="col-sm-2 control-label">Status</label>
+                            <div class="col-md-12" id="carStatus">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="right">
+                        <div class="form-group">
+                            <label for="carDate" class="col-sm-2 control-label">Date</label>
+                            <div class="col-md-12">
+                                <input type="date" class="form-control" id="carDate" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="clear:both;">
+                    <label for="carRemarks" class="col-sm-1 control-label">Remarks</label>
+                    <div class="col-md-12">
+                        <textarea maxlength="1000" rows="10" cols="100" id="carRemarks" class="form-control" style="max-width: 100%; width:100%; height: 120px; resize: vertical;" placeholder="Enter text here..."></textarea>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" id="btnPrevious" onclick="Previous()"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Previous</button>
+                    <button type="reset" class="btn btn-warning" id="btnReset" onclick="ResetTabs()"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Reset</button>
+                    <button type="submit" class="btn btn-success" id="btnSave" onclick="SaveCarePlan()"><span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save</button>
+                    <button type="button" class="btn btn-info" id="btnEmail" onclick="SendEmail()"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</button>
+                </div>
+                <br />
+                <input type="hidden" id="CarePlanId" value="" />
+            </form>
+        </div>
+
+
+        <div id="symptom" class="tab-pane fade">
+            <h3>Symptomatology</h3>
+
+        </div>
+        <div id="functio" class="tab-pane fade">
+            <h3>Functional Assessments</h3>
+
+        </div>
+        <div id="general" class="tab-pane fade">
+            <h3>General Observations</h3>
+
+        </div>
+        <div id="problem" class="tab-pane fade">
+            <h3>Problems</h3>
+
+        </div>
+        <div id="physiot" class="tab-pane fade">
+            <h3>Physiotherapy</h3>
+
+        </div>
+
+        <!--
+            <input type="hidden" id="AssesmentId" value="" />
+        -->
+
+
+    </div>
+</div>
+
+
+<!--
+    -EXISTING ASSESSMENTS (default: loads last saved assessment)
+    Assessments exist independent of Patients/Workers
+    This means, Assessments will be saved on their own, without needing Patients/Care Plan information
+
+    -ADDING NEW ASSESSMENT (reset button clears all fields)
+    To create a new Assessment, every field will be reset
+    ONLY: Asssessment, Patient Assessment and Care Plan -- are allowed
+    DEFUNCT: Last 5 tabs -- input fields are all disabled here, and information will be loaded into them, but cannot be changed/used
+-->

@@ -1,0 +1,12 @@
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\bin\Debug\DataLayer.dll.config
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\bin\Debug\DataLayer.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\bin\Debug\DataLayer.pdb
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\bin\Debug\Common.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\bin\Debug\EntityFramework.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\bin\Debug\Common.pdb
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\bin\Debug\EntityFramework.xml
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\obj\Debug\DataLayer.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\DataLayer\obj\Debug\DataLayer.pdb

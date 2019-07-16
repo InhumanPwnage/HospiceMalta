@@ -1,0 +1,74 @@
+﻿body {
+}
+
+/*
+    Splitting page into 2 divs
+*/	
+#left {
+  float:left;
+  width: 50%;
+  display: inline;
+  
+}
+
+#right {
+  float: left;/*YOU ARE A FUCKING IDIOT. DO NOT USE THIS*/
+  width: 50%;
+  display: inline;
+}
+
+
+
+/*
+    Color of tabs
+*/
+/*.containment .nav a {
+
+    background-color: #fff ;
+}*/
+
+.form-group { width: 100% }
+
+/*
+    Quick way to center text
+*/
+#mytitle {
+    text-align:center;
+}
+
+/*
+    Tab font-size
+*/
+.nav-tabs li a {font-size:11px;}
+
+
+/*
+    Resizes input field widths so they do not take up the whole div
+*/
+.form-control-inline {
+    min-width: 0;
+    width: auto;
+    display: inline;
+}
+
+
+/*Drag 'n' drop */
+#sortable1, #sortable2 {
+    border: 1px solid #eee;
+    width: 180px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: left;
+    margin-right: 10px;
+	height:120px;
+	overflow:auto;
+  }
+
+  #sortable1 li, #sortable2 li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 16px;
+    width: 150px;
+  }

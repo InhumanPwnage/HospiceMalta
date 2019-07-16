@@ -1,0 +1,1522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospiceSysModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HospiceSysEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accommodations" EntityType="HospiceSysModel.Accommodation" />
+    <EntitySet Name="AllergiesSpirituals" EntityType="HospiceSysModel.AllergiesSpiritual" />
+    <EntitySet Name="AssessmentOrigins" EntityType="HospiceSysModel.AssessmentOrigin" />
+    <EntitySet Name="Assessments" EntityType="HospiceSysModel.Assessment" />
+    <EntitySet Name="AssessmentTypes" EntityType="HospiceSysModel.AssessmentType" />
+    <EntitySet Name="CarePlans" EntityType="HospiceSysModel.CarePlan" />
+    <EntitySet Name="CarePlanStatuses" EntityType="HospiceSysModel.CarePlanStatus" />
+    <EntitySet Name="CarePlanTypes" EntityType="HospiceSysModel.CarePlanType" />
+    <EntitySet Name="CaseConferances" EntityType="HospiceSysModel.CaseConferance" />
+    <EntitySet Name="DeceasedPlaces" EntityType="HospiceSysModel.DeceasedPlace" />
+    <EntitySet Name="DiagnosisPatients" EntityType="HospiceSysModel.DiagnosisPatient" />
+    <EntitySet Name="DiagnosisTypes" EntityType="HospiceSysModel.DiagnosisType" />
+    <EntitySet Name="Doctors" EntityType="HospiceSysModel.Doctor" />
+    <EntitySet Name="DoctorTypes" EntityType="HospiceSysModel.DoctorType" />
+    <EntitySet Name="Employees" EntityType="HospiceSysModel.Employee" />
+    <EntitySet Name="Equipments" EntityType="HospiceSysModel.Equipment" />
+    <EntitySet Name="EquipmentTypes" EntityType="HospiceSysModel.EquipmentType" />
+    <EntitySet Name="FamilySocials" EntityType="HospiceSysModel.FamilySocial" />
+    <EntitySet Name="FileStatuses" EntityType="HospiceSysModel.FileStatus" />
+    <EntitySet Name="FunctionalAssesments" EntityType="HospiceSysModel.FunctionalAssesment" />
+    <EntitySet Name="Genders" EntityType="HospiceSysModel.Gender" />
+    <EntitySet Name="GeneralObservations" EntityType="HospiceSysModel.GeneralObservation" />
+    <EntitySet Name="IllnessesMedicals" EntityType="HospiceSysModel.IllnessesMedical" />
+    <EntitySet Name="Incomes" EntityType="HospiceSysModel.Income" />
+    <EntitySet Name="Islands" EntityType="HospiceSysModel.Island" />
+    <EntitySet Name="Localities" EntityType="HospiceSysModel.Locality" />
+    <EntitySet Name="Locations" EntityType="HospiceSysModel.Location" />
+    <EntitySet Name="MedicalTypes" EntityType="HospiceSysModel.MedicalType" />
+    <EntitySet Name="Medications" EntityType="HospiceSysModel.Medication" />
+    <EntitySet Name="NextOfKins" EntityType="HospiceSysModel.NextOfKin" />
+    <EntitySet Name="Occupations" EntityType="HospiceSysModel.Occupation" />
+    <EntitySet Name="OriginOfReferrals" EntityType="HospiceSysModel.OriginOfReferral" />
+    <EntitySet Name="PatientAssessmentGrades" EntityType="HospiceSysModel.PatientAssessmentGrade" />
+    <EntitySet Name="PatientAssessmentTypes" EntityType="HospiceSysModel.PatientAssessmentType" />
+    <EntitySet Name="PatientAwarenesses" EntityType="HospiceSysModel.PatientAwareness" />
+    <EntitySet Name="Patients" EntityType="HospiceSysModel.Patient" />
+    <EntitySet Name="PatientsEmployees" EntityType="HospiceSysModel.PatientsEmployee" />
+    <EntitySet Name="PatientsIncomes" EntityType="HospiceSysModel.PatientsIncome" />
+    <EntitySet Name="PatientStatuses" EntityType="HospiceSysModel.PatientStatus" />
+    <EntitySet Name="Persons" EntityType="HospiceSysModel.Person" />
+    <EntitySet Name="Physiotherapies" EntityType="HospiceSysModel.Physiotherapy" />
+    <EntitySet Name="Problems" EntityType="HospiceSysModel.Problem" />
+    <EntitySet Name="Properties" EntityType="HospiceSysModel.Property" />
+    <EntitySet Name="Relations" EntityType="HospiceSysModel.Relation" />
+    <EntitySet Name="RelativeAwarenesses" EntityType="HospiceSysModel.RelativeAwareness" />
+    <EntitySet Name="Roles" EntityType="HospiceSysModel.Role" />
+    <EntitySet Name="Streets" EntityType="HospiceSysModel.Street" />
+    <EntitySet Name="Symptomatologies" EntityType="HospiceSysModel.Symptomatology" />
+    <EntitySet Name="sysdiagrams" EntityType="HospiceSysModel.sysdiagram" />
+    <EntitySet Name="Titles" EntityType="HospiceSysModel.Title" />
+    <EntitySet Name="WorkTypes" EntityType="HospiceSysModel.WorkType" />
+    <AssociationSet Name="FK_FamilySocials_Accommodations" Association="HospiceSysModel.FK_FamilySocials_Accommodations">
+      <End Role="Accommodation" EntitySet="Accommodations" />
+      <End Role="FamilySocial" EntitySet="FamilySocials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AllergiesSpirituals_Patients" Association="HospiceSysModel.FK_AllergiesSpirituals_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="AllergiesSpiritual" EntitySet="AllergiesSpirituals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assessments_AssessmentOrigins" Association="HospiceSysModel.FK_Assessments_AssessmentOrigins">
+      <End Role="AssessmentOrigin" EntitySet="AssessmentOrigins" />
+      <End Role="Assessment" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assesments_Patients" Association="HospiceSysModel.FK_Assesments_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="Assessment" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assessments_AssessmentTypes" Association="HospiceSysModel.FK_Assessments_AssessmentTypes">
+      <End Role="AssessmentType" EntitySet="AssessmentTypes" />
+      <End Role="Assessment" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assessments_Employees" Association="HospiceSysModel.FK_Assessments_Employees">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Assessment" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarePlans_CarePlanStatuses" Association="HospiceSysModel.FK_CarePlans_CarePlanStatuses">
+      <End Role="CarePlanStatus" EntitySet="CarePlanStatuses" />
+      <End Role="CarePlan" EntitySet="CarePlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarePlans_CarePlanTypes" Association="HospiceSysModel.FK_CarePlans_CarePlanTypes">
+      <End Role="CarePlanType" EntitySet="CarePlanTypes" />
+      <End Role="CarePlan" EntitySet="CarePlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarePlans_Patients" Association="HospiceSysModel.FK_CarePlans_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="CarePlan" EntitySet="CarePlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaseConferances_Patients" Association="HospiceSysModel.FK_CaseConferances_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="CaseConferance" EntitySet="CaseConferances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_DeceasedPlaces" Association="HospiceSysModel.FK_Patients_DeceasedPlaces">
+      <End Role="DeceasedPlace" EntitySet="DeceasedPlaces" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiagnosisPatients_DiagnosisTypes" Association="HospiceSysModel.FK_DiagnosisPatients_DiagnosisTypes">
+      <End Role="DiagnosisType" EntitySet="DiagnosisTypes" />
+      <End Role="DiagnosisPatient" EntitySet="DiagnosisPatients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_DiagnosisPatients" Association="HospiceSysModel.FK_Patients_DiagnosisPatients">
+      <End Role="DiagnosisPatient" EntitySet="DiagnosisPatients" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctors_DoctorTypes" Association="HospiceSysModel.FK_Doctors_DoctorTypes">
+      <End Role="DoctorType" EntitySet="DoctorTypes" />
+      <End Role="Doctor" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctors_Employees" Association="HospiceSysModel.FK_Doctors_Employees">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Doctor" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctors_Patients" Association="HospiceSysModel.FK_Doctors_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="Doctor" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_NextOfKin" Association="HospiceSysModel.FK_Employees_NextOfKin">
+      <End Role="NextOfKin" EntitySet="NextOfKins" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Occupations" Association="HospiceSysModel.FK_Employees_Occupations">
+      <End Role="Occupation" EntitySet="Occupations" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Persons" Association="HospiceSysModel.FK_Employees_Persons">
+      <End Role="Person" EntitySet="Persons" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_WorkTypes" Association="HospiceSysModel.FK_Employees_WorkTypes">
+      <End Role="WorkType" EntitySet="WorkTypes" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientsEmployees_Employees" Association="HospiceSysModel.FK_PatientsEmployees_Employees">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="PatientsEmployee" EntitySet="PatientsEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipments_EquipmentTypes" Association="HospiceSysModel.FK_Equipments_EquipmentTypes">
+      <End Role="EquipmentType" EntitySet="EquipmentTypes" />
+      <End Role="Equipment" EntitySet="Equipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipments_Patients" Association="HospiceSysModel.FK_Equipments_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="Equipment" EntitySet="Equipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FamilySocials_Patients" Association="HospiceSysModel.FK_FamilySocials_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="FamilySocial" EntitySet="FamilySocials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FamilySocials_PatientStatuses" Association="HospiceSysModel.FK_FamilySocials_PatientStatuses">
+      <End Role="PatientStatus" EntitySet="PatientStatuses" />
+      <End Role="FamilySocial" EntitySet="FamilySocials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientsIncomes_FamilySocials" Association="HospiceSysModel.FK_PatientsIncomes_FamilySocials">
+      <End Role="FamilySocial" EntitySet="FamilySocials" />
+      <End Role="PatientsIncome" EntitySet="PatientsIncomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_FileStatuses" Association="HospiceSysModel.FK_Patients_FileStatuses">
+      <End Role="FileStatus" EntitySet="FileStatuses" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionalAssesments_Patients" Association="HospiceSysModel.FK_FunctionalAssesments_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="FunctionalAssesment" EntitySet="FunctionalAssesments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persons_Genders" Association="HospiceSysModel.FK_Persons_Genders">
+      <End Role="Gender" EntitySet="Genders" />
+      <End Role="Person" EntitySet="Persons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GeneralObservations_Patients" Association="HospiceSysModel.FK_GeneralObservations_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="GeneralObservation" EntitySet="GeneralObservations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IllnessesMedicals_MedicalTypes" Association="HospiceSysModel.FK_IllnessesMedicals_MedicalTypes">
+      <End Role="MedicalType" EntitySet="MedicalTypes" />
+      <End Role="IllnessesMedical" EntitySet="IllnessesMedicals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IllnessesMedicals_Patients" Association="HospiceSysModel.FK_IllnessesMedicals_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="IllnessesMedical" EntitySet="IllnessesMedicals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientsIncomes_Incomes" Association="HospiceSysModel.FK_PatientsIncomes_Incomes">
+      <End Role="Income" EntitySet="Incomes" />
+      <End Role="PatientsIncome" EntitySet="PatientsIncomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Localities_Islands" Association="HospiceSysModel.FK_Localities_Islands">
+      <End Role="Island" EntitySet="Islands" />
+      <End Role="Locality" EntitySet="Localities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Streets_Localities" Association="HospiceSysModel.FK_Streets_Localities">
+      <End Role="Locality" EntitySet="Localities" />
+      <End Role="Street" EntitySet="Streets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Physiotherapies_Locations" Association="HospiceSysModel.FK_Physiotherapies_Locations">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Physiotherapy" EntitySet="Physiotherapies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Symptomatologies_Locations" Association="HospiceSysModel.FK_Symptomatologies_Locations">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Symptomatology" EntitySet="Symptomatologies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medications_Patients" Association="HospiceSysModel.FK_Medications_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="Medication" EntitySet="Medications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NextOfKin_Persons" Association="HospiceSysModel.FK_NextOfKin_Persons">
+      <End Role="Person" EntitySet="Persons" />
+      <End Role="NextOfKin" EntitySet="NextOfKins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NextOfKin_Relations" Association="HospiceSysModel.FK_NextOfKin_Relations">
+      <End Role="Relation" EntitySet="Relations" />
+      <End Role="NextOfKin" EntitySet="NextOfKins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_OriginOfReferrals" Association="HospiceSysModel.FK_Patients_OriginOfReferrals">
+      <End Role="OriginOfReferral" EntitySet="OriginOfReferrals" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientAssessmentGrades_PatientAssessmentTypes" Association="HospiceSysModel.FK_PatientAssessmentGrades_PatientAssessmentTypes">
+      <End Role="PatientAssessmentType" EntitySet="PatientAssessmentTypes" />
+      <End Role="PatientAssessmentGrade" EntitySet="PatientAssessmentGrades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_PatientAwareness" Association="HospiceSysModel.FK_Patients_PatientAwareness">
+      <End Role="PatientAwareness" EntitySet="PatientAwarenesses" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_Persons" Association="HospiceSysModel.FK_Patients_Persons">
+      <End Role="Person" EntitySet="Persons" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_RelativeAwareness" Association="HospiceSysModel.FK_Patients_RelativeAwareness">
+      <End Role="RelativeAwareness" EntitySet="RelativeAwarenesses" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientsEmployees_Patients" Association="HospiceSysModel.FK_PatientsEmployees_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="PatientsEmployee" EntitySet="PatientsEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Physiotherapies_Patients" Association="HospiceSysModel.FK_Physiotherapies_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="Physiotherapy" EntitySet="Physiotherapies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Problems_Patients" Association="HospiceSysModel.FK_Problems_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="Problem" EntitySet="Problems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Symptomatologies_Patients" Association="HospiceSysModel.FK_Symptomatologies_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="Symptomatology" EntitySet="Symptomatologies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persons_Properties" Association="HospiceSysModel.FK_Persons_Properties">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Person" EntitySet="Persons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persons_Titles" Association="HospiceSysModel.FK_Persons_Titles">
+      <End Role="Title" EntitySet="Titles" />
+      <End Role="Person" EntitySet="Persons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Streets" Association="HospiceSysModel.FK_Properties_Streets">
+      <End Role="Street" EntitySet="Streets" />
+      <End Role="Property" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeesRoles" Association="HospiceSysModel.EmployeesRoles">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Role" EntitySet="Roles" />
+    </AssociationSet>
+    <EntitySet Name="PatientAssesments" EntityType="HospiceSysModel.PatientAssesment" />
+    <AssociationSet Name="FK_PatientAssesment_PatientAssessmentGrades" Association="HospiceSysModel.FK_PatientAssesment_PatientAssessmentGrades">
+      <End Role="PatientAssessmentGrade" EntitySet="PatientAssessmentGrades" />
+      <End Role="PatientAssesment" EntitySet="PatientAssesments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientAssesment_Patients" Association="HospiceSysModel.FK_PatientAssesment_Patients">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="PatientAssesment" EntitySet="PatientAssesments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Accommodation">
+    <Key>
+      <PropertyRef Name="AccommodationId" />
+    </Key>
+    <Property Name="AccommodationId" Type="Guid" Nullable="false" />
+    <Property Name="AccommmodationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FamilySocials" Relationship="HospiceSysModel.FK_FamilySocials_Accommodations" FromRole="Accommodation" ToRole="FamilySocial" />
+  </EntityType>
+  <EntityType Name="AllergiesSpiritual">
+    <Key>
+      <PropertyRef Name="AllergiesSpiritualId" />
+    </Key>
+    <Property Name="AllergiesSpiritualId" Type="Guid" Nullable="false" />
+    <Property Name="AllergyType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AllergyDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SpiritualDate" Type="DateTime" Precision="0" />
+    <Property Name="SpiritualDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientId_fk" Type="Int32" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_AllergiesSpirituals_Patients" FromRole="AllergiesSpiritual" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="AssessmentOrigin">
+    <Key>
+      <PropertyRef Name="AssesmentOriginId" />
+    </Key>
+    <Property Name="AssesmentOriginId" Type="Guid" Nullable="false" />
+    <Property Name="AssesmentOriginName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Assessments" Relationship="HospiceSysModel.FK_Assessments_AssessmentOrigins" FromRole="AssessmentOrigin" ToRole="Assessment" />
+  </EntityType>
+  <EntityType Name="Assessment">
+    <Key>
+      <PropertyRef Name="AssesmentId" />
+    </Key>
+    <Property Name="AssesmentId" Type="Guid" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="duration" Type="Int32" />
+    <Property Name="time" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="AssesmentType_fk" Type="Guid" />
+    <Property Name="Worker_fk" Type="Guid" />
+    <Property Name="Origin_fk" Type="Guid" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Confirmed" Type="Boolean" />
+    <Property Name="ConfirmationDate" Type="DateTime" Precision="0" />
+    <Property Name="PatientId_fk" Type="Int32" />
+    <NavigationProperty Name="AssessmentOrigin" Relationship="HospiceSysModel.FK_Assessments_AssessmentOrigins" FromRole="Assessment" ToRole="AssessmentOrigin" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_Assesments_Patients" FromRole="Assessment" ToRole="Patient" />
+    <NavigationProperty Name="AssessmentType" Relationship="HospiceSysModel.FK_Assessments_AssessmentTypes" FromRole="Assessment" ToRole="AssessmentType" />
+    <NavigationProperty Name="Employee" Relationship="HospiceSysModel.FK_Assessments_Employees" FromRole="Assessment" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="AssessmentType">
+    <Key>
+      <PropertyRef Name="AssesmentTypeId" />
+    </Key>
+    <Property Name="AssesmentTypeId" Type="Guid" Nullable="false" />
+    <Property Name="AssesmentTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Assessments" Relationship="HospiceSysModel.FK_Assessments_AssessmentTypes" FromRole="AssessmentType" ToRole="Assessment" />
+  </EntityType>
+  <EntityType Name="CarePlan">
+    <Key>
+      <PropertyRef Name="CarePlanID" />
+    </Key>
+    <Property Name="CarePlanID" Type="Guid" Nullable="false" />
+    <Property Name="CarePlanType" Type="Guid" Nullable="false" />
+    <Property Name="CarePlanStatus" Type="Guid" Nullable="false" />
+    <Property Name="CarePlanRemarks" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CarePlanDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CarePlanDisable" Type="Boolean" />
+    <Property Name="PatientId_fk" Type="Int32" />
+    <NavigationProperty Name="CarePlanStatus1" Relationship="HospiceSysModel.FK_CarePlans_CarePlanStatuses" FromRole="CarePlan" ToRole="CarePlanStatus" />
+    <NavigationProperty Name="CarePlanType1" Relationship="HospiceSysModel.FK_CarePlans_CarePlanTypes" FromRole="CarePlan" ToRole="CarePlanType" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_CarePlans_Patients" FromRole="CarePlan" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="CarePlanStatus">
+    <Key>
+      <PropertyRef Name="CarePlanStatusId" />
+    </Key>
+    <Property Name="CarePlanStatusId" Type="Guid" Nullable="false" />
+    <Property Name="CarePlanStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CarePlans" Relationship="HospiceSysModel.FK_CarePlans_CarePlanStatuses" FromRole="CarePlanStatus" ToRole="CarePlan" />
+  </EntityType>
+  <EntityType Name="CarePlanType">
+    <Key>
+      <PropertyRef Name="CarePlanTypeId" />
+    </Key>
+    <Property Name="CarePlanTypeId" Type="Guid" Nullable="false" />
+    <Property Name="CareplanTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CarePlans" Relationship="HospiceSysModel.FK_CarePlans_CarePlanTypes" FromRole="CarePlanType" ToRole="CarePlan" />
+  </EntityType>
+  <EntityType Name="CaseConferance">
+    <Key>
+      <PropertyRef Name="CaseConferanceId" />
+    </Key>
+    <Property Name="CaseConferanceId" Type="Guid" Nullable="false" />
+    <Property Name="CaseConferanceDate" Type="DateTime" Precision="0" />
+    <Property Name="CaseConferancePoint" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CaseConferanceResolution" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PatientId_fk" Type="Int32" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_CaseConferances_Patients" FromRole="CaseConferance" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="DeceasedPlace">
+    <Key>
+      <PropertyRef Name="DeceasedplaceId" />
+    </Key>
+    <Property Name="DeceasedplaceId" Type="Guid" Nullable="false" />
+    <Property Name="DeceasedPlaceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Patients" Relationship="HospiceSysModel.FK_Patients_DeceasedPlaces" FromRole="DeceasedPlace" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="DiagnosisPatient">
+    <Key>
+      <PropertyRef Name="DiagnosisId" />
+    </Key>
+    <Property Name="DiagnosisId" Type="Guid" Nullable="false" />
+    <Property Name="DiagnosisType_fk" Type="Guid" />
+    <Property Name="PatientId_fk" Type="Int32" Nullable="false" />
+    <Property Name="DiagnosisDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LogDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="DiagnosisType" Relationship="HospiceSysModel.FK_DiagnosisPatients_DiagnosisTypes" FromRole="DiagnosisPatient" ToRole="DiagnosisType" />
+    <NavigationProperty Name="Patients" Relationship="HospiceSysModel.FK_Patients_DiagnosisPatients" FromRole="DiagnosisPatient" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="DiagnosisType">
+    <Key>
+      <PropertyRef Name="DiagnosisId" />
+    </Key>
+    <Property Name="DiagnosisId" Type="Guid" Nullable="false" />
+    <Property Name="DiagnosisName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DiagnosisPatients" Relationship="HospiceSysModel.FK_DiagnosisPatients_DiagnosisTypes" FromRole="DiagnosisType" ToRole="DiagnosisPatient" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="DoctorID" />
+    </Key>
+    <Property Name="DoctorID" Type="Guid" Nullable="false" />
+    <Property Name="PatientId_FK" Type="Int32" />
+    <Property Name="DoctorType_FK" Type="Guid" />
+    <Property Name="DoctorDate" Type="DateTime" Precision="0" />
+    <Property Name="DEmployeeId_FK" Type="Guid" />
+    <Property Name="DoctorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DoctorType" Relationship="HospiceSysModel.FK_Doctors_DoctorTypes" FromRole="Doctor" ToRole="DoctorType" />
+    <NavigationProperty Name="Employee" Relationship="HospiceSysModel.FK_Doctors_Employees" FromRole="Doctor" ToRole="Employee" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_Doctors_Patients" FromRole="Doctor" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="DoctorType">
+    <Key>
+      <PropertyRef Name="DoctorTypeId" />
+    </Key>
+    <Property Name="DoctorTypeId" Type="Guid" Nullable="false" />
+    <Property Name="DoctorTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Doctors" Relationship="HospiceSysModel.FK_Doctors_DoctorTypes" FromRole="DoctorType" ToRole="Doctor" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeesId" />
+    </Key>
+    <Property Name="EmployeesId" Type="Guid" Nullable="false" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SSN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="ViewPatient" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Occupations_fk" Type="Guid" />
+    <Property Name="WorkTypes_fk" Type="Guid" />
+    <Property Name="NextOfKin_fk" Type="Guid" />
+    <Property Name="Personfk" Type="Guid" />
+    <NavigationProperty Name="Assessments" Relationship="HospiceSysModel.FK_Assessments_Employees" FromRole="Employee" ToRole="Assessment" />
+    <NavigationProperty Name="Doctors" Relationship="HospiceSysModel.FK_Doctors_Employees" FromRole="Employee" ToRole="Doctor" />
+    <NavigationProperty Name="NextOfKin" Relationship="HospiceSysModel.FK_Employees_NextOfKin" FromRole="Employee" ToRole="NextOfKin" />
+    <NavigationProperty Name="Occupation" Relationship="HospiceSysModel.FK_Employees_Occupations" FromRole="Employee" ToRole="Occupation" />
+    <NavigationProperty Name="Person" Relationship="HospiceSysModel.FK_Employees_Persons" FromRole="Employee" ToRole="Person" />
+    <NavigationProperty Name="WorkType" Relationship="HospiceSysModel.FK_Employees_WorkTypes" FromRole="Employee" ToRole="WorkType" />
+    <NavigationProperty Name="PatientsEmployees" Relationship="HospiceSysModel.FK_PatientsEmployees_Employees" FromRole="Employee" ToRole="PatientsEmployee" />
+    <NavigationProperty Name="Roles" Relationship="HospiceSysModel.EmployeesRoles" FromRole="Employee" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="EquipmentId" />
+    </Key>
+    <Property Name="EquipmentId" Type="Guid" Nullable="false" />
+    <Property Name="EquipmentDate" Type="DateTime" Precision="0" />
+    <Property Name="EquipmentType_fk" Type="Guid" />
+    <Property Name="EquipmentRemarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientId_fk" Type="Int32" />
+    <NavigationProperty Name="EquipmentType" Relationship="HospiceSysModel.FK_Equipments_EquipmentTypes" FromRole="Equipment" ToRole="EquipmentType" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_Equipments_Patients" FromRole="Equipment" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="EquipmentType">
+    <Key>
+      <PropertyRef Name="EquipmentTypeId" />
+    </Key>
+    <Property Name="EquipmentTypeId" Type="Guid" Nullable="false" />
+    <Property Name="EquipmentTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Equipments" Relationship="HospiceSysModel.FK_Equipments_EquipmentTypes" FromRole="EquipmentType" ToRole="Equipment" />
+  </EntityType>
+  <EntityType Name="FamilySocial">
+    <Key>
+      <PropertyRef Name="FamilySocialId" />
+    </Key>
+    <Property Name="FamilySocialId" Type="Guid" Nullable="false" />
+    <Property Name="SocialPatientStatus_fk" Type="Guid" />
+    <Property Name="SocialOccupation_fk" Type="Guid" />
+    <Property Name="SocialAccommodations_fk" Type="Guid" />
+    <Property Name="SocialNoOfChildren" Type="Int32" />
+    <Property Name="SocialProblems" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FamilyHistory" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PatientId_fk" Type="Int32" />
+    <Property Name="SocialNumberOfFloors" Type="Int32" />
+    <NavigationProperty Name="Accommodation" Relationship="HospiceSysModel.FK_FamilySocials_Accommodations" FromRole="FamilySocial" ToRole="Accommodation" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_FamilySocials_Patients" FromRole="FamilySocial" ToRole="Patient" />
+    <NavigationProperty Name="PatientStatus" Relationship="HospiceSysModel.FK_FamilySocials_PatientStatuses" FromRole="FamilySocial" ToRole="PatientStatus" />
+    <NavigationProperty Name="PatientsIncomes" Relationship="HospiceSysModel.FK_PatientsIncomes_FamilySocials" FromRole="FamilySocial" ToRole="PatientsIncome" />
+  </EntityType>
+  <EntityType Name="FileStatus">
+    <Key>
+      <PropertyRef Name="FileStatusId" />
+    </Key>
+    <Property Name="FileStatusId" Type="Guid" Nullable="false" />
+    <Property Name="FileStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Patients" Relationship="HospiceSysModel.FK_Patients_FileStatuses" FromRole="FileStatus" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="FunctionalAssesment">
+    <Key>
+      <PropertyRef Name="FunctionalAssesmentId" />
+    </Key>
+    <Property Name="FunctionalAssesmentId" Type="Guid" Nullable="false" />
+    <Property Name="FunctionalAssesmentType" Type="Int32" Nullable="false" />
+    <Property Name="FunctionalAssesmentDescription" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientId_fk" Type="Int32" Nullable="false" />
+    <Property Name="FunctionalAssesmentDisable" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_FunctionalAssesments_Patients" FromRole="FunctionalAssesment" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderId" />
+    </Key>
+    <Property Name="GenderId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GenderName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Persons" Relationship="HospiceSysModel.FK_Persons_Genders" FromRole="Gender" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="GeneralObservation">
+    <Key>
+      <PropertyRef Name="GeneralObservationId" />
+    </Key>
+    <Property Name="GeneralObservationId" Type="Guid" Nullable="false" />
+    <Property Name="GeneralObservationType" Type="Int32" Nullable="false" />
+    <Property Name="GeneralObservationRemarks" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientId_fk" Type="Int32" Nullable="false" />
+    <Property Name="GeneralObservationDisable" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_GeneralObservations_Patients" FromRole="GeneralObservation" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="IllnessesMedical">
+    <Key>
+      <PropertyRef Name="IllnessesMedicalId" />
+    </Key>
+    <Property Name="IllnessesMedicalId" Type="Guid" Nullable="false" />
+    <Property Name="IllnessesDate" Type="DateTime" Precision="0" />
+    <Property Name="IllnessesEventsOfRevelance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MedicalType_fk" Type="Guid" />
+    <Property Name="MedicalDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientId_fk" Type="Int32" />
+    <NavigationProperty Name="MedicalType" Relationship="HospiceSysModel.FK_IllnessesMedicals_MedicalTypes" FromRole="IllnessesMedical" ToRole="MedicalType" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_IllnessesMedicals_Patients" FromRole="IllnessesMedical" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Income">
+    <Key>
+      <PropertyRef Name="IncomeId" />
+    </Key>
+    <Property Name="IncomeId" Type="Guid" Nullable="false" />
+    <Property Name="IncomeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PatientsIncomes" Relationship="HospiceSysModel.FK_PatientsIncomes_Incomes" FromRole="Income" ToRole="PatientsIncome" />
+  </EntityType>
+  <EntityType Name="Island">
+    <Key>
+      <PropertyRef Name="IslandId" />
+    </Key>
+    <Property Name="IslandId" Type="Guid" Nullable="false" />
+    <Property Name="IslandName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Localities" Relationship="HospiceSysModel.FK_Localities_Islands" FromRole="Island" ToRole="Locality" />
+  </EntityType>
+  <EntityType Name="Locality">
+    <Key>
+      <PropertyRef Name="LocalityId" />
+    </Key>
+    <Property Name="LocalityId" Type="Guid" Nullable="false" />
+    <Property Name="LocalityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Island_fk" Type="Guid" />
+    <NavigationProperty Name="Island" Relationship="HospiceSysModel.FK_Localities_Islands" FromRole="Locality" ToRole="Island" />
+    <NavigationProperty Name="Streets" Relationship="HospiceSysModel.FK_Streets_Localities" FromRole="Locality" ToRole="Street" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Guid" Nullable="false" />
+    <Property Name="LocationName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Physiotherapies" Relationship="HospiceSysModel.FK_Physiotherapies_Locations" FromRole="Location" ToRole="Physiotherapy" />
+    <NavigationProperty Name="Symptomatologies" Relationship="HospiceSysModel.FK_Symptomatologies_Locations" FromRole="Location" ToRole="Symptomatology" />
+  </EntityType>
+  <EntityType Name="MedicalType">
+    <Key>
+      <PropertyRef Name="MedicalTypeId" />
+    </Key>
+    <Property Name="MedicalTypeId" Type="Guid" Nullable="false" />
+    <Property Name="MedicalTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="IllnessesMedicals" Relationship="HospiceSysModel.FK_IllnessesMedicals_MedicalTypes" FromRole="MedicalType" ToRole="IllnessesMedical" />
+  </EntityType>
+  <EntityType Name="Medication">
+    <Key>
+      <PropertyRef Name="MedicationId" />
+    </Key>
+    <Property Name="MedicationId" Type="Guid" Nullable="false" />
+    <Property Name="MedicationDate" Type="DateTime" Precision="0" />
+    <Property Name="MedicationDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientId_fk" Type="Int32" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_Medications_Patients" FromRole="Medication" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="NextOfKin">
+    <Key>
+      <PropertyRef Name="NextOfKinId" />
+    </Key>
+    <Property Name="NextOfKinId" Type="Guid" Nullable="false" />
+    <Property Name="Personfk" Type="Guid" />
+    <Property Name="Relation_fk" Type="Guid" />
+    <Property Name="OtherRelationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NextOfKinRemark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrimaryRelation" Type="Boolean" />
+    <Property Name="ContactRelation" Type="Boolean" />
+    <Property Name="PatientId_fk" Type="Int32" />
+    <Property Name="supportNetworkRelation" Type="Boolean" />
+    <NavigationProperty Name="Employees" Relationship="HospiceSysModel.FK_Employees_NextOfKin" FromRole="NextOfKin" ToRole="Employee" />
+    <NavigationProperty Name="Person" Relationship="HospiceSysModel.FK_NextOfKin_Persons" FromRole="NextOfKin" ToRole="Person" />
+    <NavigationProperty Name="Relation" Relationship="HospiceSysModel.FK_NextOfKin_Relations" FromRole="NextOfKin" ToRole="Relation" />
+  </EntityType>
+  <EntityType Name="Occupation">
+    <Key>
+      <PropertyRef Name="OccupationId" />
+    </Key>
+    <Property Name="OccupationId" Type="Guid" Nullable="false" />
+    <Property Name="OccupationName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="HospiceSysModel.FK_Employees_Occupations" FromRole="Occupation" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="OriginOfReferral">
+    <Key>
+      <PropertyRef Name="OriginOfReferralId" />
+    </Key>
+    <Property Name="OriginOfReferralId" Type="Guid" Nullable="false" />
+    <Property Name="OriginOfReferralName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Patients" Relationship="HospiceSysModel.FK_Patients_OriginOfReferrals" FromRole="OriginOfReferral" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="PatientAssessmentGrade">
+    <Key>
+      <PropertyRef Name="PatientAssessmentGradeId" />
+    </Key>
+    <Property Name="PatientAssessmentGradeId" Type="Guid" Nullable="false" />
+    <Property Name="PatientAssessmentGradeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientAssessmentTypeId_fk" Type="Guid" />
+    <NavigationProperty Name="PatientAssessmentType" Relationship="HospiceSysModel.FK_PatientAssessmentGrades_PatientAssessmentTypes" FromRole="PatientAssessmentGrade" ToRole="PatientAssessmentType" />
+    <NavigationProperty Name="PatientAssesments" Relationship="HospiceSysModel.FK_PatientAssesment_PatientAssessmentGrades" FromRole="PatientAssessmentGrade" ToRole="PatientAssesment" />
+  </EntityType>
+  <EntityType Name="PatientAssessmentType">
+    <Key>
+      <PropertyRef Name="PatientAssesmentTypeId" />
+    </Key>
+    <Property Name="PatientAssesmentTypeId" Type="Guid" Nullable="false" />
+    <Property Name="PatientAssessmentTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PatientAssessmentGrades" Relationship="HospiceSysModel.FK_PatientAssessmentGrades_PatientAssessmentTypes" FromRole="PatientAssessmentType" ToRole="PatientAssessmentGrade" />
+  </EntityType>
+  <EntityType Name="PatientAwareness">
+    <Key>
+      <PropertyRef Name="PatientAwareId" />
+    </Key>
+    <Property Name="PatientAwareId" Type="Guid" Nullable="false" />
+    <Property Name="PatientAwareName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Patients" Relationship="HospiceSysModel.FK_Patients_PatientAwareness" FromRole="PatientAwareness" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="FileNumber" />
+    </Key>
+    <Property Name="FileNumber" Type="Int32" Nullable="false" />
+    <Property Name="DateOfFirstContact" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OriginOfReferral_fk" Type="Guid" />
+    <Property Name="DeceasedPlace_fk" Type="Guid" />
+    <Property Name="DeceasedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeceasedPlaceOther" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Oncologist_fk" Type="Guid" />
+    <Property Name="Consultant_fk" Type="Guid" />
+    <Property Name="Religion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Diagnosis_fk" Type="Guid" />
+    <Property Name="PatientAware_fk" Type="Guid" />
+    <Property Name="RelativesAware_fk" Type="Guid" />
+    <Property Name="FamilyDoctor_fk" Type="Guid" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FileStatus_fk" Type="Guid" />
+    <Property Name="Personfk" Type="Guid" />
+    <NavigationProperty Name="AllergiesSpirituals" Relationship="HospiceSysModel.FK_AllergiesSpirituals_Patients" FromRole="Patient" ToRole="AllergiesSpiritual" />
+    <NavigationProperty Name="Assessments" Relationship="HospiceSysModel.FK_Assesments_Patients" FromRole="Patient" ToRole="Assessment" />
+    <NavigationProperty Name="CarePlans" Relationship="HospiceSysModel.FK_CarePlans_Patients" FromRole="Patient" ToRole="CarePlan" />
+    <NavigationProperty Name="CaseConferances" Relationship="HospiceSysModel.FK_CaseConferances_Patients" FromRole="Patient" ToRole="CaseConferance" />
+    <NavigationProperty Name="DeceasedPlace" Relationship="HospiceSysModel.FK_Patients_DeceasedPlaces" FromRole="Patient" ToRole="DeceasedPlace" />
+    <NavigationProperty Name="DiagnosisPatient" Relationship="HospiceSysModel.FK_Patients_DiagnosisPatients" FromRole="Patient" ToRole="DiagnosisPatient" />
+    <NavigationProperty Name="Doctors" Relationship="HospiceSysModel.FK_Doctors_Patients" FromRole="Patient" ToRole="Doctor" />
+    <NavigationProperty Name="Equipments" Relationship="HospiceSysModel.FK_Equipments_Patients" FromRole="Patient" ToRole="Equipment" />
+    <NavigationProperty Name="FamilySocials" Relationship="HospiceSysModel.FK_FamilySocials_Patients" FromRole="Patient" ToRole="FamilySocial" />
+    <NavigationProperty Name="FileStatus" Relationship="HospiceSysModel.FK_Patients_FileStatuses" FromRole="Patient" ToRole="FileStatus" />
+    <NavigationProperty Name="FunctionalAssesments" Relationship="HospiceSysModel.FK_FunctionalAssesments_Patients" FromRole="Patient" ToRole="FunctionalAssesment" />
+    <NavigationProperty Name="GeneralObservations" Relationship="HospiceSysModel.FK_GeneralObservations_Patients" FromRole="Patient" ToRole="GeneralObservation" />
+    <NavigationProperty Name="IllnessesMedicals" Relationship="HospiceSysModel.FK_IllnessesMedicals_Patients" FromRole="Patient" ToRole="IllnessesMedical" />
+    <NavigationProperty Name="Medications" Relationship="HospiceSysModel.FK_Medications_Patients" FromRole="Patient" ToRole="Medication" />
+    <NavigationProperty Name="OriginOfReferral" Relationship="HospiceSysModel.FK_Patients_OriginOfReferrals" FromRole="Patient" ToRole="OriginOfReferral" />
+    <NavigationProperty Name="PatientAwareness" Relationship="HospiceSysModel.FK_Patients_PatientAwareness" FromRole="Patient" ToRole="PatientAwareness" />
+    <NavigationProperty Name="Person" Relationship="HospiceSysModel.FK_Patients_Persons" FromRole="Patient" ToRole="Person" />
+    <NavigationProperty Name="RelativeAwareness" Relationship="HospiceSysModel.FK_Patients_RelativeAwareness" FromRole="Patient" ToRole="RelativeAwareness" />
+    <NavigationProperty Name="PatientsEmployees" Relationship="HospiceSysModel.FK_PatientsEmployees_Patients" FromRole="Patient" ToRole="PatientsEmployee" />
+    <NavigationProperty Name="Physiotherapies" Relationship="HospiceSysModel.FK_Physiotherapies_Patients" FromRole="Patient" ToRole="Physiotherapy" />
+    <NavigationProperty Name="Problems" Relationship="HospiceSysModel.FK_Problems_Patients" FromRole="Patient" ToRole="Problem" />
+    <NavigationProperty Name="Symptomatologies" Relationship="HospiceSysModel.FK_Symptomatologies_Patients" FromRole="Patient" ToRole="Symptomatology" />
+    <NavigationProperty Name="PatientAssesments" Relationship="HospiceSysModel.FK_PatientAssesment_Patients" FromRole="Patient" ToRole="PatientAssesment" />
+  </EntityType>
+  <EntityType Name="PatientsEmployee">
+    <Key>
+      <PropertyRef Name="PatientFileNumber_fk" />
+      <PropertyRef Name="EmployeeId_fk" />
+      <PropertyRef Name="PatientDate" />
+    </Key>
+    <Property Name="PatientFileNumber_fk" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeId_fk" Type="Guid" Nullable="false" />
+    <Property Name="PatientDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Employee" Relationship="HospiceSysModel.FK_PatientsEmployees_Employees" FromRole="PatientsEmployee" ToRole="Employee" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_PatientsEmployees_Patients" FromRole="PatientsEmployee" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="PatientsIncome">
+    <Key>
+      <PropertyRef Name="IncomeIdFk" />
+      <PropertyRef Name="FamilySocialIdFk" />
+      <PropertyRef Name="LogDate" />
+    </Key>
+    <Property Name="IncomeIdFk" Type="Guid" Nullable="false" />
+    <Property Name="FamilySocialIdFk" Type="Guid" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="FamilySocial" Relationship="HospiceSysModel.FK_PatientsIncomes_FamilySocials" FromRole="PatientsIncome" ToRole="FamilySocial" />
+    <NavigationProperty Name="Income" Relationship="HospiceSysModel.FK_PatientsIncomes_Incomes" FromRole="PatientsIncome" ToRole="Income" />
+  </EntityType>
+  <EntityType Name="PatientStatus">
+    <Key>
+      <PropertyRef Name="PatientStatusId" />
+    </Key>
+    <Property Name="PatientStatusId" Type="Guid" Nullable="false" />
+    <Property Name="PatientStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FamilySocials" Relationship="HospiceSysModel.FK_FamilySocials_PatientStatuses" FromRole="PatientStatus" ToRole="FamilySocial" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="PersonID" Type="Guid" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="Gender_fk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PassportNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TelephoneNo" Type="Int32" />
+    <Property Name="MobileNo" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Property_fk" Type="Guid" />
+    <Property Name="Title_fk" Type="Guid" />
+    <Property Name="IdCardNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="HospiceSysModel.FK_Employees_Persons" FromRole="Person" ToRole="Employee" />
+    <NavigationProperty Name="Gender" Relationship="HospiceSysModel.FK_Persons_Genders" FromRole="Person" ToRole="Gender" />
+    <NavigationProperty Name="NextOfKins" Relationship="HospiceSysModel.FK_NextOfKin_Persons" FromRole="Person" ToRole="NextOfKin" />
+    <NavigationProperty Name="Patients" Relationship="HospiceSysModel.FK_Patients_Persons" FromRole="Person" ToRole="Patient" />
+    <NavigationProperty Name="Property" Relationship="HospiceSysModel.FK_Persons_Properties" FromRole="Person" ToRole="Property" />
+    <NavigationProperty Name="Title" Relationship="HospiceSysModel.FK_Persons_Titles" FromRole="Person" ToRole="Title" />
+  </EntityType>
+  <EntityType Name="Physiotherapy">
+    <Key>
+      <PropertyRef Name="PhysiotherapyId" />
+    </Key>
+    <Property Name="PhysiotherapyId" Type="Guid" Nullable="false" />
+    <Property Name="PhysiotherapyType" Type="Int32" Nullable="false" />
+    <Property Name="PhysiotherapyRemarks" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LocationIdPhy" Type="Guid" Nullable="false" />
+    <Property Name="PatientId_fk" Type="Int32" Nullable="false" />
+    <Property Name="PhysiotherapyDisable" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Location" Relationship="HospiceSysModel.FK_Physiotherapies_Locations" FromRole="Physiotherapy" ToRole="Location" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_Physiotherapies_Patients" FromRole="Physiotherapy" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Problem">
+    <Key>
+      <PropertyRef Name="ProblemsId" />
+    </Key>
+    <Property Name="ProblemsId" Type="Guid" Nullable="false" />
+    <Property Name="ProblemsType" Type="Int32" Nullable="false" />
+    <Property Name="ProblemsDescription" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientId_fk" Type="Int32" Nullable="false" />
+    <Property Name="ProblemsDisable" Type="Boolean" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_Problems_Patients" FromRole="Problem" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="Guid" Nullable="false" />
+    <Property Name="PropertyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Street_fk" Type="Guid" />
+    <NavigationProperty Name="Persons" Relationship="HospiceSysModel.FK_Persons_Properties" FromRole="Property" ToRole="Person" />
+    <NavigationProperty Name="Street" Relationship="HospiceSysModel.FK_Properties_Streets" FromRole="Property" ToRole="Street" />
+  </EntityType>
+  <EntityType Name="Relation">
+    <Key>
+      <PropertyRef Name="RelationId" />
+    </Key>
+    <Property Name="RelationId" Type="Guid" Nullable="false" />
+    <Property Name="RelationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="NextOfKins" Relationship="HospiceSysModel.FK_NextOfKin_Relations" FromRole="Relation" ToRole="NextOfKin" />
+  </EntityType>
+  <EntityType Name="RelativeAwareness">
+    <Key>
+      <PropertyRef Name="RelativeAwareId" />
+    </Key>
+    <Property Name="RelativeAwareId" Type="Guid" Nullable="false" />
+    <Property Name="RelativeAwareName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Patients" Relationship="HospiceSysModel.FK_Patients_RelativeAwareness" FromRole="RelativeAwareness" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleCode" />
+    </Key>
+    <Property Name="RoleCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="HospiceSysModel.EmployeesRoles" FromRole="Role" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Street">
+    <Key>
+      <PropertyRef Name="StreetId" />
+    </Key>
+    <Property Name="StreetId" Type="Guid" Nullable="false" />
+    <Property Name="StreetName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Locality_fk" Type="Guid" />
+    <NavigationProperty Name="Locality" Relationship="HospiceSysModel.FK_Streets_Localities" FromRole="Street" ToRole="Locality" />
+    <NavigationProperty Name="Properties" Relationship="HospiceSysModel.FK_Properties_Streets" FromRole="Street" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="Symptomatology">
+    <Key>
+      <PropertyRef Name="SymptomatologyId" />
+    </Key>
+    <Property Name="SymptomatologyId" Type="Guid" Nullable="false" />
+    <Property Name="PatientId_fk" Type="Int32" Nullable="false" />
+    <Property Name="SymptomatologyType" Type="Int32" Nullable="false" />
+    <Property Name="SymptomatologyGrade" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SymptomatologyRemark" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LocationIdSym" Type="Guid" Nullable="false" />
+    <Property Name="SymptomatologyDisable" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Location" Relationship="HospiceSysModel.FK_Symptomatologies_Locations" FromRole="Symptomatology" ToRole="Location" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_Symptomatologies_Patients" FromRole="Symptomatology" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="TitleId" />
+    </Key>
+    <Property Name="TitleId" Type="Guid" Nullable="false" />
+    <Property Name="TitleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Persons" Relationship="HospiceSysModel.FK_Persons_Titles" FromRole="Title" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="WorkType">
+    <Key>
+      <PropertyRef Name="WorkTypeId" />
+    </Key>
+    <Property Name="WorkTypeId" Type="Guid" Nullable="false" />
+    <Property Name="WorkTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="HospiceSysModel.FK_Employees_WorkTypes" FromRole="WorkType" ToRole="Employee" />
+  </EntityType>
+  <Association Name="FK_FamilySocials_Accommodations">
+    <End Type="HospiceSysModel.Accommodation" Role="Accommodation" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.FamilySocial" Role="FamilySocial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accommodation">
+        <PropertyRef Name="AccommodationId" />
+      </Principal>
+      <Dependent Role="FamilySocial">
+        <PropertyRef Name="SocialAccommodations_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AllergiesSpirituals_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.AllergiesSpiritual" Role="AllergiesSpiritual" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="AllergiesSpiritual">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assessments_AssessmentOrigins">
+    <End Type="HospiceSysModel.AssessmentOrigin" Role="AssessmentOrigin" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Assessment" Role="Assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentOrigin">
+        <PropertyRef Name="AssesmentOriginId" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="Origin_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assesments_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Assessment" Role="Assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assessments_AssessmentTypes">
+    <End Type="HospiceSysModel.AssessmentType" Role="AssessmentType" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Assessment" Role="Assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentType">
+        <PropertyRef Name="AssesmentTypeId" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="AssesmentType_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assessments_Employees">
+    <End Type="HospiceSysModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Assessment" Role="Assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeesId" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="Worker_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarePlans_CarePlanStatuses">
+    <End Type="HospiceSysModel.CarePlanStatus" Role="CarePlanStatus" Multiplicity="1" />
+    <End Type="HospiceSysModel.CarePlan" Role="CarePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarePlanStatus">
+        <PropertyRef Name="CarePlanStatusId" />
+      </Principal>
+      <Dependent Role="CarePlan">
+        <PropertyRef Name="CarePlanStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarePlans_CarePlanTypes">
+    <End Type="HospiceSysModel.CarePlanType" Role="CarePlanType" Multiplicity="1" />
+    <End Type="HospiceSysModel.CarePlan" Role="CarePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarePlanType">
+        <PropertyRef Name="CarePlanTypeId" />
+      </Principal>
+      <Dependent Role="CarePlan">
+        <PropertyRef Name="CarePlanType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarePlans_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.CarePlan" Role="CarePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="CarePlan">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaseConferances_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.CaseConferance" Role="CaseConferance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="CaseConferance">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_DeceasedPlaces">
+    <End Type="HospiceSysModel.DeceasedPlace" Role="DeceasedPlace" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeceasedPlace">
+        <PropertyRef Name="DeceasedplaceId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="DeceasedPlace_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiagnosisPatients_DiagnosisTypes">
+    <End Type="HospiceSysModel.DiagnosisType" Role="DiagnosisType" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.DiagnosisPatient" Role="DiagnosisPatient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DiagnosisType">
+        <PropertyRef Name="DiagnosisId" />
+      </Principal>
+      <Dependent Role="DiagnosisPatient">
+        <PropertyRef Name="DiagnosisType_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_DiagnosisPatients">
+    <End Type="HospiceSysModel.DiagnosisPatient" Role="DiagnosisPatient" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DiagnosisPatient">
+        <PropertyRef Name="DiagnosisId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="Diagnosis_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctors_DoctorTypes">
+    <End Type="HospiceSysModel.DoctorType" Role="DoctorType" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Doctor" Role="Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DoctorType">
+        <PropertyRef Name="DoctorTypeId" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="DoctorType_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctors_Employees">
+    <End Type="HospiceSysModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Doctor" Role="Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeesId" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="DEmployeeId_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctors_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Doctor" Role="Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="PatientId_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_NextOfKin">
+    <End Type="HospiceSysModel.NextOfKin" Role="NextOfKin" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NextOfKin">
+        <PropertyRef Name="NextOfKinId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="NextOfKin_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Occupations">
+    <End Type="HospiceSysModel.Occupation" Role="Occupation" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Occupation">
+        <PropertyRef Name="OccupationId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Occupations_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Persons">
+    <End Type="HospiceSysModel.Person" Role="Person" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Personfk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_WorkTypes">
+    <End Type="HospiceSysModel.WorkType" Role="WorkType" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkType">
+        <PropertyRef Name="WorkTypeId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="WorkTypes_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientsEmployees_Employees">
+    <End Type="HospiceSysModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="HospiceSysModel.PatientsEmployee" Role="PatientsEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeesId" />
+      </Principal>
+      <Dependent Role="PatientsEmployee">
+        <PropertyRef Name="EmployeeId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipments_EquipmentTypes">
+    <End Type="HospiceSysModel.EquipmentType" Role="EquipmentType" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Equipment" Role="Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquipmentType">
+        <PropertyRef Name="EquipmentTypeId" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="EquipmentType_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipments_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Equipment" Role="Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FamilySocials_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.FamilySocial" Role="FamilySocial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="FamilySocial">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FamilySocials_PatientStatuses">
+    <End Type="HospiceSysModel.PatientStatus" Role="PatientStatus" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.FamilySocial" Role="FamilySocial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientStatus">
+        <PropertyRef Name="PatientStatusId" />
+      </Principal>
+      <Dependent Role="FamilySocial">
+        <PropertyRef Name="SocialPatientStatus_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientsIncomes_FamilySocials">
+    <End Type="HospiceSysModel.FamilySocial" Role="FamilySocial" Multiplicity="1" />
+    <End Type="HospiceSysModel.PatientsIncome" Role="PatientsIncome" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FamilySocial">
+        <PropertyRef Name="FamilySocialId" />
+      </Principal>
+      <Dependent Role="PatientsIncome">
+        <PropertyRef Name="FamilySocialIdFk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_FileStatuses">
+    <End Type="HospiceSysModel.FileStatus" Role="FileStatus" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FileStatus">
+        <PropertyRef Name="FileStatusId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="FileStatus_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionalAssesments_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="1" />
+    <End Type="HospiceSysModel.FunctionalAssesment" Role="FunctionalAssesment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="FunctionalAssesment">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persons_Genders">
+    <End Type="HospiceSysModel.Gender" Role="Gender" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Person" Role="Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderId" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="Gender_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GeneralObservations_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="1" />
+    <End Type="HospiceSysModel.GeneralObservation" Role="GeneralObservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="GeneralObservation">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IllnessesMedicals_MedicalTypes">
+    <End Type="HospiceSysModel.MedicalType" Role="MedicalType" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.IllnessesMedical" Role="IllnessesMedical" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalType">
+        <PropertyRef Name="MedicalTypeId" />
+      </Principal>
+      <Dependent Role="IllnessesMedical">
+        <PropertyRef Name="MedicalType_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IllnessesMedicals_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.IllnessesMedical" Role="IllnessesMedical" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="IllnessesMedical">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientsIncomes_Incomes">
+    <End Type="HospiceSysModel.Income" Role="Income" Multiplicity="1" />
+    <End Type="HospiceSysModel.PatientsIncome" Role="PatientsIncome" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Income">
+        <PropertyRef Name="IncomeId" />
+      </Principal>
+      <Dependent Role="PatientsIncome">
+        <PropertyRef Name="IncomeIdFk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Localities_Islands">
+    <End Type="HospiceSysModel.Island" Role="Island" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Locality" Role="Locality" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Island">
+        <PropertyRef Name="IslandId" />
+      </Principal>
+      <Dependent Role="Locality">
+        <PropertyRef Name="Island_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Streets_Localities">
+    <End Type="HospiceSysModel.Locality" Role="Locality" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Street" Role="Street" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locality">
+        <PropertyRef Name="LocalityId" />
+      </Principal>
+      <Dependent Role="Street">
+        <PropertyRef Name="Locality_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Physiotherapies_Locations">
+    <End Type="HospiceSysModel.Location" Role="Location" Multiplicity="1" />
+    <End Type="HospiceSysModel.Physiotherapy" Role="Physiotherapy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Physiotherapy">
+        <PropertyRef Name="LocationIdPhy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Symptomatologies_Locations">
+    <End Type="HospiceSysModel.Location" Role="Location" Multiplicity="1" />
+    <End Type="HospiceSysModel.Symptomatology" Role="Symptomatology" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Symptomatology">
+        <PropertyRef Name="LocationIdSym" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medications_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Medication" Role="Medication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Medication">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NextOfKin_Persons">
+    <End Type="HospiceSysModel.Person" Role="Person" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.NextOfKin" Role="NextOfKin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="NextOfKin">
+        <PropertyRef Name="Personfk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NextOfKin_Relations">
+    <End Type="HospiceSysModel.Relation" Role="Relation" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.NextOfKin" Role="NextOfKin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Relation">
+        <PropertyRef Name="RelationId" />
+      </Principal>
+      <Dependent Role="NextOfKin">
+        <PropertyRef Name="Relation_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_OriginOfReferrals">
+    <End Type="HospiceSysModel.OriginOfReferral" Role="OriginOfReferral" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OriginOfReferral">
+        <PropertyRef Name="OriginOfReferralId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="OriginOfReferral_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientAssessmentGrades_PatientAssessmentTypes">
+    <End Type="HospiceSysModel.PatientAssessmentType" Role="PatientAssessmentType" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.PatientAssessmentGrade" Role="PatientAssessmentGrade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientAssessmentType">
+        <PropertyRef Name="PatientAssesmentTypeId" />
+      </Principal>
+      <Dependent Role="PatientAssessmentGrade">
+        <PropertyRef Name="PatientAssessmentTypeId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_PatientAwareness">
+    <End Type="HospiceSysModel.PatientAwareness" Role="PatientAwareness" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientAwareness">
+        <PropertyRef Name="PatientAwareId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="PatientAware_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_Persons">
+    <End Type="HospiceSysModel.Person" Role="Person" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="Personfk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_RelativeAwareness">
+    <End Type="HospiceSysModel.RelativeAwareness" Role="RelativeAwareness" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RelativeAwareness">
+        <PropertyRef Name="RelativeAwareId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="RelativesAware_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientsEmployees_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="1" />
+    <End Type="HospiceSysModel.PatientsEmployee" Role="PatientsEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="PatientsEmployee">
+        <PropertyRef Name="PatientFileNumber_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Physiotherapies_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="1" />
+    <End Type="HospiceSysModel.Physiotherapy" Role="Physiotherapy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Physiotherapy">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Problems_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="1" />
+    <End Type="HospiceSysModel.Problem" Role="Problem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Problem">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Symptomatologies_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="1" />
+    <End Type="HospiceSysModel.Symptomatology" Role="Symptomatology" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Symptomatology">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persons_Properties">
+    <End Type="HospiceSysModel.Property" Role="Property" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Person" Role="Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="Property_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persons_Titles">
+    <End Type="HospiceSysModel.Title" Role="Title" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Person" Role="Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Title">
+        <PropertyRef Name="TitleId" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="Title_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Streets">
+    <End Type="HospiceSysModel.Street" Role="Street" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.Property" Role="Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Street">
+        <PropertyRef Name="StreetId" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="Street_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeesRoles">
+    <End Type="HospiceSysModel.Employee" Role="Employee" Multiplicity="*" />
+    <End Type="HospiceSysModel.Role" Role="Role" Multiplicity="*" />
+  </Association>
+  <EntityType Name="PatientAssesment">
+    <Key>
+      <PropertyRef Name="PatientAssesmentId" />
+    </Key>
+    <Property Name="Type" Type="Guid" Nullable="false" />
+    <Property Name="Grade" Type="Guid" Nullable="false" />
+    <Property Name="Remark" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientAssesmentId" Type="Guid" Nullable="false" />
+    <Property Name="PatientId_fk" Type="Int32" />
+    <NavigationProperty Name="PatientAssessmentGrade" Relationship="HospiceSysModel.FK_PatientAssesment_PatientAssessmentGrades" FromRole="PatientAssesment" ToRole="PatientAssessmentGrade" />
+    <NavigationProperty Name="Patient" Relationship="HospiceSysModel.FK_PatientAssesment_Patients" FromRole="PatientAssesment" ToRole="Patient" />
+  </EntityType>
+  <Association Name="FK_PatientAssesment_PatientAssessmentGrades">
+    <End Type="HospiceSysModel.PatientAssessmentGrade" Role="PatientAssessmentGrade" Multiplicity="1" />
+    <End Type="HospiceSysModel.PatientAssesment" Role="PatientAssesment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientAssessmentGrade">
+        <PropertyRef Name="PatientAssessmentGradeId" />
+      </Principal>
+      <Dependent Role="PatientAssesment">
+        <PropertyRef Name="Grade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientAssesment_Patients">
+    <End Type="HospiceSysModel.Patient" Role="Patient" Multiplicity="0..1" />
+    <End Type="HospiceSysModel.PatientAssesment" Role="PatientAssesment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="PatientAssesment">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

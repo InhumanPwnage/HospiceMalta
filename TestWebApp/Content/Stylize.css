@@ -1,0 +1,52 @@
+﻿body {
+}
+
+/*
+    Splitting page into 2 divs
+*/	
+#left {
+  float:left;
+  width: 50%;
+  display: inline;
+  
+}
+
+#right {
+  float: left;/*YOU ARE A FUCKING IDIOT. DO NOT USE THIS*/
+  width: 50%;
+  display: inline;
+}
+
+
+
+/*
+    Color of tabs
+*/
+/*.containment .nav a {
+
+    background-color: #fff ;
+}*/
+
+.form-group { width: 100% }
+
+/*
+    Quick way to center text
+*/
+#mytitle {
+    text-align:center;
+}
+
+/*
+    Tab font-size
+*/
+.nav-tabs li a {font-size:11px;}
+
+
+/*
+    Resizes input field widths so they do not take up the whole div
+*/
+.form-control-inline {
+    min-width: 0;
+    width: auto;
+    display: inline;
+}

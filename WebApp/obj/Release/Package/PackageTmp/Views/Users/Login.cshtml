@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    if (ViewBag.LoginInvalid != null)
+    {
+        <h4><span style="color:red">Login invalid!</span></h4>
+    }
+    <div class="form-group">
+        <label for="username" class="col-sm-2 control-label">Username</label>
+        <div class="col-md-12">
+            <input type="text" class="form-control form-control-inline" name="username" maxlength="12" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password" class="col-sm-2 control-label">Password</label>
+        <div class="col-md-12">
+            <input type="password" class="form-control form-control-inline" id="assDuration" maxlength="12" name="password" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-12">
+            <input type="submit" class="btn btn-success" id="submit" value="Login" />
+        </div>
+    </div>
+
+    @ViewBag.Message
+}

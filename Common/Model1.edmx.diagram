@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1dc0538f1a2643b59bd76220625359c7" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="HospiceSysModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.Accommodation" Width="1.5" PointX="25.625" PointY="20.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.AllergiesSpiritual" Width="1.5" PointX="21.875" PointY="53.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.AssessmentOrigin" Width="1.5" PointX="22.625" PointY="22.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.Assessment" Width="1.5" PointX="24.875" PointY="31.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.AssessmentType" Width="1.5" PointX="22.625" PointY="44" />
+        <EntityTypeShape EntityType="HospiceSysModel.CarePlan" Width="1.5" PointX="21.875" PointY="40.125" />
+        <EntityTypeShape EntityType="HospiceSysModel.CarePlanStatus" Width="1.5" PointX="19.625" PointY="44.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.CarePlanType" Width="1.5" PointX="19.625" PointY="47" />
+        <EntityTypeShape EntityType="HospiceSysModel.CaseConferance" Width="1.5" PointX="19" PointY="53.5" />
+        <EntityTypeShape EntityType="HospiceSysModel.DeceasedPlace" Width="1.5" PointX="17.375" PointY="47" />
+        <EntityTypeShape EntityType="HospiceSysModel.DiagnosisPatient" Width="1.5" PointX="17.375" PointY="25.5" />
+        <EntityTypeShape EntityType="HospiceSysModel.DiagnosisType" Width="1.5" PointX="15.125" PointY="25.875" />
+        <EntityTypeShape EntityType="HospiceSysModel.Doctor" Width="1.5" PointX="21.875" PointY="32.25" />
+        <EntityTypeShape EntityType="HospiceSysModel.DoctorType" Width="1.5" PointX="19.625" PointY="26.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.Employee" Width="1.5" PointX="16.875" PointY="31.125" />
+        <EntityTypeShape EntityType="HospiceSysModel.Equipment" Width="1.5" PointX="21.875" PointY="36.375" />
+        <EntityTypeShape EntityType="HospiceSysModel.EquipmentType" Width="1.5" PointX="19.625" PointY="41.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.FamilySocial" Width="1.5" PointX="27.875" PointY="27.875" />
+        <EntityTypeShape EntityType="HospiceSysModel.FileStatus" Width="1.5" PointX="17.375" PointY="42.375" />
+        <EntityTypeShape EntityType="HospiceSysModel.FunctionalAssesment" Width="1.5" PointX="21.875" PointY="25.375" />
+        <EntityTypeShape EntityType="HospiceSysModel.FunctionalAssessmentType" Width="1.5" PointX="19.625" PointY="23.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.Gender" Width="1.5" PointX="10.125" PointY="36" />
+        <EntityTypeShape EntityType="HospiceSysModel.GeneralObservation" Width="1.5" PointX="27.875" PointY="32.375" />
+        <EntityTypeShape EntityType="HospiceSysModel.GeneralObservationType" Width="1.5" PointX="25.625" PointY="43.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.IllnessesMedical" Width="1.5" PointX="27.875" PointY="40.25" />
+        <EntityTypeShape EntityType="HospiceSysModel.Income" Width="1.5" PointX="27.875" PointY="21.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.Island" Width="1.5" PointX="3.375" PointY="32.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.Locality" Width="1.5" PointX="5.625" PointY="32.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.Location" Width="1.5" PointX="22.625" PointY="16.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.MedicalType" Width="1.5" PointX="25.625" PointY="49.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.Medication" Width="1.5" PointX="15.375" PointY="53.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.NextOfKin" Width="1.5" PointX="14.625" PointY="31.875" />
+        <EntityTypeShape EntityType="HospiceSysModel.Occupation" Width="1.5" PointX="14.625" PointY="29.375" />
+        <EntityTypeShape EntityType="HospiceSysModel.OriginOfReferral" Width="1.5" PointX="17.375" PointY="23" />
+        <EntityTypeShape EntityType="HospiceSysModel.PatientAssesment" Width="1.5" PointX="27.875" PointY="36.375" />
+        <EntityTypeShape EntityType="HospiceSysModel.PatientAssessmentGrade" Width="1.5" PointX="25.625" PointY="46.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.PatientAssessmentType" Width="1.5" PointX="23.375" PointY="46.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.PatientAwareness" Width="1.5" PointX="17.375" PointY="28.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.Patient" Width="1.5" PointX="19.625" PointY="29.375" />
+        <EntityTypeShape EntityType="HospiceSysModel.PatientsEmployee" Width="1.5" PointX="21.875" PointY="28.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.PatientsIncome" Width="1.5" PointX="30.125" PointY="28.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.PatientStatus" Width="1.5" PointX="25.625" PointY="41" />
+        <EntityTypeShape EntityType="HospiceSysModel.Person" Width="1.5" PointX="12.375" PointY="31.375" />
+        <EntityTypeShape EntityType="HospiceSysModel.Physiotherapy" Width="1.5" PointX="24.875" PointY="37.25" />
+        <EntityTypeShape EntityType="HospiceSysModel.PhysiotherapyType" Width="1.5" PointX="22.625" PointY="49.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.Problem" Width="1.5" PointX="27.875" PointY="24.375" />
+        <EntityTypeShape EntityType="HospiceSysModel.ProblemType" Width="1.5" PointX="25.625" PointY="23.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.Property" Width="1.5" PointX="10.125" PointY="32.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.Relation" Width="1.5" PointX="12.375" PointY="28.75" />
+        <EntityTypeShape EntityType="HospiceSysModel.RelativeAwareness" Width="1.5" PointX="17.375" PointY="44.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.Role" Width="1.5" PointX="19.125" PointY="39.25" />
+        <EntityTypeShape EntityType="HospiceSysModel.Street" Width="1.5" PointX="7.875" PointY="32.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.Symptomatology" Width="1.5" PointX="24.875" PointY="27" />
+        <EntityTypeShape EntityType="HospiceSysModel.SymptomatologyGrade" Width="1.5" PointX="22.625" PointY="19.375" />
+        <EntityTypeShape EntityType="HospiceSysModel.SymptomatologyType" Width="1.5" PointX="22.625" PointY="14.25" />
+        <EntityTypeShape EntityType="HospiceSysModel.Title" Width="1.5" PointX="10.125" PointY="29.625" />
+        <EntityTypeShape EntityType="HospiceSysModel.WorkType" Width="1.5" PointX="14.625" PointY="36.75" />
+        <AssociationConnector Association="HospiceSysModel.FK_FamilySocials_Accommodations" />
+        <AssociationConnector Association="HospiceSysModel.FK_AllergiesSpirituals_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_Assessments_AssessmentOrigins" />
+        <AssociationConnector Association="HospiceSysModel.FK_Assesments_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_Assessments_AssessmentTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_Assessments_Employees" />
+        <AssociationConnector Association="HospiceSysModel.FK_CarePlans_CarePlanStatuses" />
+        <AssociationConnector Association="HospiceSysModel.FK_CarePlans_CarePlanTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_CarePlans_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_CaseConferances_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_Patients_DeceasedPlaces" />
+        <AssociationConnector Association="HospiceSysModel.FK_DiagnosisPatients_DiagnosisTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_Patients_DiagnosisPatients" />
+        <AssociationConnector Association="HospiceSysModel.FK_Doctors_DoctorTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_Doctors_Employees" />
+        <AssociationConnector Association="HospiceSysModel.FK_Doctors_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_Employees_NextOfKin" />
+        <AssociationConnector Association="HospiceSysModel.FK_Employees_Occupations" />
+        <AssociationConnector Association="HospiceSysModel.FK_Employees_Persons" />
+        <AssociationConnector Association="HospiceSysModel.FK_Employees_WorkTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_PatientsEmployees_Employees" />
+        <AssociationConnector Association="HospiceSysModel.FK_Equipments_EquipmentTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_Equipments_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_FamilySocials_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_FamilySocials_PatientStatuses" />
+        <AssociationConnector Association="HospiceSysModel.FK_PatientsIncomes_FamilySocials" />
+        <AssociationConnector Association="HospiceSysModel.FK_Patients_FileStatuses" />
+        <AssociationConnector Association="HospiceSysModel.FK_FunctionalAssesments_FunctionalAssessmentTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_FunctionalAssesments_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_Persons_Genders" />
+        <AssociationConnector Association="HospiceSysModel.FK_GeneralObservations_GeneralObservationTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_GeneralObservations_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_IllnessesMedicals_MedicalTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_IllnessesMedicals_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_PatientsIncomes_Incomes" />
+        <AssociationConnector Association="HospiceSysModel.FK_Localities_Islands" />
+        <AssociationConnector Association="HospiceSysModel.FK_Streets_Localities" />
+        <AssociationConnector Association="HospiceSysModel.FK_Physiotherapies_Locations" />
+        <AssociationConnector Association="HospiceSysModel.FK_Symptomatologies_Locations" />
+        <AssociationConnector Association="HospiceSysModel.FK_Medications_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_NextOfKin_Persons" />
+        <AssociationConnector Association="HospiceSysModel.FK_NextOfKin_Relations" />
+        <AssociationConnector Association="HospiceSysModel.FK_Patients_OriginOfReferrals" />
+        <AssociationConnector Association="HospiceSysModel.FK_PatientAssesment_PatientAssessmentGrades" />
+        <AssociationConnector Association="HospiceSysModel.FK_PatientAssesment_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_PatientAssessmentGrades_PatientAssessmentTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_Patients_PatientAwareness" />
+        <AssociationConnector Association="HospiceSysModel.FK_Patients_Persons" />
+        <AssociationConnector Association="HospiceSysModel.FK_Patients_RelativeAwareness" />
+        <AssociationConnector Association="HospiceSysModel.FK_PatientsEmployees_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_Physiotherapies_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_Problems_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_Symptomatologies_Patients" />
+        <AssociationConnector Association="HospiceSysModel.FK_Persons_Properties" />
+        <AssociationConnector Association="HospiceSysModel.FK_Persons_Titles" />
+        <AssociationConnector Association="HospiceSysModel.FK_Physiotherapies_PhysiotherapyTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_Problems_ProblemTypes" />
+        <AssociationConnector Association="HospiceSysModel.FK_Properties_Streets" />
+        <AssociationConnector Association="HospiceSysModel.FK_Symptomatologies_SymptomatologyGrades" />
+        <AssociationConnector Association="HospiceSysModel.FK_Symptomatologies_SymptomatologyTypes" />
+        <AssociationConnector Association="HospiceSysModel.EmployeesRoles" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

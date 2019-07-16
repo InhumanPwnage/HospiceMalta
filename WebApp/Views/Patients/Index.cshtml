@@ -1,0 +1,1064 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<meta http-equiv="refresh" id="test" content="">
+<link rel="stylesheet" href="../../jqwidgets/styles/jqx.base.css" type="text/css" />
+<script type="text/javascript" src="../../jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="../../jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="../../jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="../../jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="../../jqwidgets/jqxdragdrop.js"></script>
+
+<script src="~/Scripts/dev/SearchPatient.js"></script>
+<script src="~/Scripts/dev/DropDownSetup.js"></script>
+<script src="~/Scripts/dev/DropDownManagment.js"></script>
+<script src="~/Scripts/dev/PatientScripts.js"></script>
+<script src="~/Scripts/dev/ListboxManagment.js"></script>
+<script src="~/Scripts/dev/AddingPatient.js"></script>
+<script src="~/Scripts/dev/AddingTabs.js"></script>
+
+<h2 style="text-align:center;">Patient Information</h2>
+
+<div class="containment2">
+    <input type="button" id="btnSubmit" name="Submit" value="Add Patient" onclick="return addPatient()" />
+    
+    <ul class="nav nav-tabs">
+        <li><a data-toggle="tab" href="#home">Patient</a></li>
+        <li><a data-toggle="tab" href="#menu2">Family/Social</a></li>
+        <li><a data-toggle="tab" href="#menu3">Medication</a></li>
+        <li><a data-toggle="tab" href="#menu4">Allergy/Spiritual</a></li>
+        <li><a data-toggle="tab" href="#menu5">Illness/Medical</a></li>
+        <li><a data-toggle="tab" href="#menu6">Next of Kin</a></li>
+        <li><a data-toggle="tab" href="#menu7">Case Conferance</a></li>
+        <li><a data-toggle="tab" href="#menu8">Equipment</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade">
+                <h3>Patient</h3>
+
+                <table class="table">
+
+                    <tbody></tbody>
+                </table>
+
+
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Government&nbsp;Id:</span>
+
+                        <input type="text" id="txtGovernmentId" name="governmentId" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Passport&nbsp;Number:</span>
+
+                        <input type="text" id="txtPassport" name="passport" class="form-control" style="width:300px;float:left ; margin-left:100px" />
+
+
+                    </div>
+                </div>
+                <br />
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Last&nbsp;Name:</span>
+
+                        <input type="text" id="txtSurname" name="surname" class="form-control" style="width:300px;float:left ; margin-left:100px" />
+
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">First&nbsp;Name:</span>
+
+                        <input type="text" id="txtName" name="name" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                    </div>
+                </div>
+                <br />
+                <div class="form-inline">
+
+                    <div class="form-group">
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Gender:</span>
+
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="PatientGender">
+                            <option disabled selected> None </option>
+                            @foreach (var g in ViewBag.Gender)
+                            {
+                            <option value="@g.Value">@g.Text</option>
+                            }
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Date&nbsp;of&nbsp;Birth:</span>
+
+                        <input type="date" id="dpDOB" name="dob" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                    </div>
+
+
+
+
+
+
+                </div>
+
+                <br />
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Island:</span>
+
+                        <select class="form-control" id="IslandDD" style="width:300px;float:left; margin-left:100px" onchange="getLocality(this.value)">
+                            <option disabled selected> None </option>
+                            @foreach (var i in ViewBag.Island)
+                            {
+                            <option value="@i.Value">@i.Text</option>
+                            }
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Locality:</span>
+
+                        <select class="form-control" id="LocalityDD" name="localityDD" style="width:300px;float:left; margin-left:100px" onchange="getStreet(this.value)"></select>
+
+                    </div>
+                </div>
+                <br />
+
+                <div class="form-inline">
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Street:</span>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="StreetDD" name="streetDD" style="display: inline;width:700px;margin-left:80px" onchange="getProperty(this.value)"></select>
+                        <input class="form-control" type="text" id="txtAddStreet" name="addStreet" style="display: inline;width:700px;margin-left:80px" />
+                        <input type="button" id="btnAddStreet" name="ON" value="Add Street" onclick="return toggleStreet(this.name)" />
+
+                    </div>
+                </div>
+
+                <br />    <br /><br />
+
+
+
+                <div class="form-inline">
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Property:</span>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="PropertyDD" name="propertyDD" style="display: inline;width:700px;margin-left:80px"></select>
+                        <input class="form-control" type="text" id="txtAddProperty" name="addProperty" style="display: inline;width:700px;margin-left:80px" />
+                        <input type="button" id="btnAddProperty" name="ON" value="Add Property" onclick="return toggleProperty(this.name)" />
+                    </div>
+                </div>
+                <br /><br />
+
+
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Telephone&nbsp;Number:</span>
+
+                        <input type="number" id="txtTelephone" name="telephone" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Mobile&nbsp;Number:</span>
+
+                        <input type="number" id="txtMobile" name="mobile" class="form-control" style="width:300px;float:left ; margin-left:100px" />
+
+
+                    </div>
+                </div>
+                <br />
+
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Email:</span>
+
+                        <input type="email" id="txtEmail" name="txtEmail" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                    </div>
+                    <div class="form-group">
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Title:</span>
+
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="patientTitle">
+                            <option disabled selected> None </option>
+                            @foreach (var t in ViewBag.Titles)
+                            {
+                            <option value="@t.Value">@t.Text</option>
+                            }
+                        </select>
+
+                    </div>
+                </div>
+                <br /><br />
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">File&nbsp;Number<span style="color:maroon">*</span>:</span>
+
+                        <input type="number" id="txtFileNumber" name="fileNumber" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Date&nbsp;of&nbsp;first&nbsp;contact<span style="color:maroon">*</span>:</span>
+
+                        <input type="date" id="txtDofc" name="dofc" class="form-control" style="width:300px;float:left ; margin-left:100px" />
+
+
+                    </div>
+                </div>
+                <br />
+
+
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Key&nbsp;Worker:</span>
+
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="patientkeyWorker">
+                            <option disabled selected> None </option>
+                            @foreach (var kw in ViewBag.KeyWorkers)
+                            {
+                            <option value="@kw.Value">@kw.Text</option>
+                            }
+                        </select>
+
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Origin&nbsp;Of&nbsp;Referral:</span>
+
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="patientOriginOfReferral">
+                            <option disabled selected> None </option>
+                            @foreach (var oor in ViewBag.OriginOfReferral)
+                            {
+                            <option value="@oor.Value">@oor.Text</option>
+                            }
+                        </select>
+
+                    </div>
+                </div>
+                <br /><br />
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Family&nbsp;Doctor:</span>
+                        <input type="button" value="Change" class="form-control" style="float:left;margin-left:10px" name="ON" id="btnFamilyDoctor" onclick="return toggleFamilyDoctor(this.name)" />
+
+                        <input type="text" id="txtFamilyDoctor" name="familyDoctor" class="form-control" style="width:300px;float:left; margin-left:10px" />
+                        <select class="form-control" style="width:300px;float:left; margin-left:10px" id="ddFamilyDoctor">
+                            <option disabled selected> None </option>
+                            @foreach (var fd in ViewBag.FamilyDoctor)
+                            {
+                            <option value="@fd.Value">@fd.Text</option>
+                            }
+                        </select>
+
+
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Consultant:</span>
+                        <input type="button" value="Change" class="form-control" style="float:left;margin-left:10px" name="ON" id="btnConsultant" onclick="return toggleConsultant(this.name)" />
+
+                        <input type="text" id="txtConsultant" name="consultant" class="form-control" style="width:300px;float:left ; margin-left:10px" />
+                        <select class="form-control" style="width:300px;float:left; margin-left:10px" id="ddConsultant">
+                            <option disabled selected> None </option>
+                            @foreach (var dc in ViewBag.DoctorC)
+                            {
+                            <option value="@dc.Value">@dc.Text</option>
+                            }
+                        </select>
+
+                    </div>
+                </div>
+                <br /><br />
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Oncologist:</span>
+                        <input type="button" value="Change" class="form-control" style="float:left;margin-left:10px" name="ON" id="btnOncologist" onclick="return toggleOncologist(this.name)" />
+
+                        <input type="text" id="txtOncologist" name="oncologist" class="form-control" style="width:300px;float:left; margin-left:10px" />
+                        <select class="form-control" style="width:300px;float:left; margin-left:10px" id="ddOncologist">
+                            <option disabled selected> None </option>
+                            @foreach (var o in ViewBag.Oncologist)
+                            {
+                            <option value="@o.Value">@o.Text</option>
+                            }
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Religion:</span>
+
+                        <input type="text" id="txtReligion" name="religion" class="form-control" style="width:300px;float:left ; margin-left:100px" />
+
+
+                    </div>
+                </div>
+                <br /><br />
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Date&nbsp;Of&nbsp;Diagnosis:</span>
+
+                        <input type="date" id="txtDateofDiagnosis" name="dateofDiagnosis" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Diagnosis:</span>
+
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="patientDiagnosis">
+                            <option disabled selected> None </option>
+                            @foreach (var d in ViewBag.Diagnosis)
+                            {
+                            <option value="@d.Value">@d.Text</option>
+                            }
+                        </select>
+
+                    </div>
+                </div>
+                <br /><br />
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Patient&nbsp;Aware:</span>
+
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="patientPAware">
+                            <option disabled selected> None </option>
+                            @foreach (var pa in ViewBag.PAware)
+                            {
+                            <option value="@pa.Value">@pa.Text</option>
+                            }
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Relatives&nbsp;Aware:</span>
+
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="patientRAware">
+                            <option disabled selected> None </option>
+                            @foreach (var ra in ViewBag.RAware)
+                            {
+                            <option value="@ra.Value">@ra.Text</option>
+                            }
+                        </select>
+
+                    </div>
+                </div>
+                <br /><br />
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Dec.&nbsp;Date:</span>
+
+                        <input type="date" id="txtDecDate" name="decDate" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                    </div>
+
+
+                </div>
+                <br /><br />
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Dec.&nbsp;Place:</span>
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="patientDeceasedPlace">
+                            <option disabled selected> None </option>
+                            @foreach (var dp in ViewBag.DecPlace)
+                            {
+                            <option value="@dp.Value">@dp.Text</option>
+                            }
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Dec.&nbsp;Place&nbsp;Other:</span>
+
+                        <input type="text" id="txtDecPlaceOther" name="decPlaceOther" class="form-control" style="width:300px;float:left ; margin-left:100px" />
+
+
+                    </div>
+                </div>
+                <br /><br />
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">File&nbsp;Status:</span>
+
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="patientFileStatus">
+                            <option disabled selected> None </option>
+                            @foreach (var fs in ViewBag.FileStatus)
+                            {
+                            <option value="@fs.Value">@fs.Text</option>
+                            }
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Date<span style="color:maroon">*</span>:</span>
+
+                        <input type="text" id="dpDate" name="dateOf publication" class="form-control" style="width:300px;float:left ; margin-left:100px" value="@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year" disabled />
+
+
+                    </div>
+                </div>
+                <br /><br />
+        </div>
+
+        <!--
+            Family/Social
+        -->
+        <div id="menu2" class="tab-pane fade">
+            <br />
+            <h4 style="text-align:center;">Patient Family/Social</h4>
+            <br />
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Grade
+                        </th>
+                        <th>
+                            Remark
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <form method="post" onsubmit="return SaveFamily();" action="/assessments/index" class="form-horizontal" id="patienta">
+            </form>
+                <div class="form-group">
+                    <label for="familyHistory" class=" col-sm-1 control-label">Family&nbsp;History:</label>
+                    <div class="col-md-12">
+                        <textarea class="form-control" name="familyHistory" rows="5" id="taFamilyHistory"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Patient's&nbsp;Status:</span>
+
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="fsPatientStatus">
+                            <option disabled selected> None </option>
+                            @foreach (var ps in ViewBag.PatientStatus)
+                            {
+                                <option value="@ps.Value">@ps.Text</option>
+                            }
+                        </select>
+
+
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Number&nbsp;Of&nbsp;Children:</span>
+
+                        <input type="number" id="txtNoOfChildren" name="noOfChildren" class="form-control" style="width:300px;float:left ; margin-left:100px" />
+
+
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Occupation:</span>
+
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="fsOccupation">
+                            <option disabled selected> None </option>
+                            @foreach (var o in ViewBag.Occupation)
+                            {
+                                <option value="@o.Value">@o.Text</option>
+                            }
+                        </select>
+
+
+
+                    </div>
+                </div>
+                <br /><br />
+                <div class="form-inline">
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Accomodation:</span>
+
+                        <select class="form-control" style="width:300px;float:left; margin-left:100px" id="fsAccomodation">
+                            <option disabled selected> None </option>
+                            @foreach (var a in ViewBag.Accomodation)
+                            {
+                                <option value="@a.Value">@a.Text</option>
+                            }
+                        </select>
+
+
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Number&nbsp;Of&nbsp;Floors:</span>
+
+                        <input type="number" id="txtNoOfFloors" name="noOfFloors" class="form-control" style="width:300px;float:left ; margin-left:100px" />
+
+
+                    </div>
+                </div>
+                <br />
+                <div class="form-inline">
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Problems:</span>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" id="txtProblems" name="problems" style="display: inline;width:800px;margin-left:85px" />
+
+                    </div>
+
+                </div>
+
+                <br /><br />
+                <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Income:</span>
+
+                <div id="lBox1" class="col-sm-2 control-label"></div>
+                <div id="lBox2"></div>
+        </div>
+
+
+        <!--
+            Medication
+        -->
+        <div id="menu3" class="tab-pane fade">
+            <h3>Patient Medication</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            Remark
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="dateMedication">Date:</label>
+                    <input type="date" class="form-control" name="dateMedication" id="dpMedication" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Description">Description:</label>
+                <textarea class="form-control" name="descriptionMedication" rows="5" id="taDescriptionMedication"></textarea>
+            </div>
+
+        </div>
+
+
+        <!--
+            Allergy/Spiritual
+        -->
+        <div id="menu4" class="tab-pane fade">
+            <h3>Patient Allergy/Spiritual</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Equipment Name
+                        </th>
+                        <th>
+                            Category
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
+                        <th>
+                            Date Ordered
+                        </th>
+                        <th>
+                            Donation Made
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p>Allergies</p>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="typeAllergies">Type:</label>
+                    <input type="text" class="form-control" name="typeAllergies" id="txtTypeAllergies" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Description">Description:</label>
+                <textarea class="form-control" name="descriptionAllergies" rows="5" id="taDescriptionAllergies"></textarea>
+            </div>
+            <p>Spiritual</p>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="dateSpiritual">Date:</label>
+                    <input type="date" class="form-control" name="dateSpiritual" id="dateSpiritual" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Description">Description:</label>
+                <textarea class="form-control" name="descriptionSpiritual" rows="5" id="taDescriptionSpiritual"></textarea>
+            </div>
+
+        </div>
+
+
+        <!--
+            Illness/Medical
+        -->
+        <div id="menu5" class="tab-pane fade">
+            <h3>Patient Illness/Medical</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Grade
+                        </th>
+                        <th>
+                            Remark
+                        </th>
+                        <th>
+                            Location
+                        </th>
+
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <p>Illness</p>
+            <br />
+            <div class="form-inline">
+                <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Date:</span>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" style="width:300px;float:left" name="dateIllness" id="dateIllness" />
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <label for="EventsOfRelevanceIllness">Events Of Relevance:</label>
+                <textarea class="form-control" name="eventsOfRelevanceIllness" rows="5" id="taEventsOfRelevanceIllness"></textarea>
+            </div>
+            <br />
+            <p>Medical</p>
+            <br />
+            <div class="form-inline">
+                <div class="form-group">
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Types:</span>
+                    <div class="col-sm-2">
+                        <select class="form-control" style="width:300px;float:left" id="medicalType">
+                            <option disabled selected> None </option>
+                            @foreach (var mt in ViewBag.MedicalType)
+                            {
+                                <option value="@mt.Value">@mt.Text</option>
+                            }
+                        </select>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <br />
+            <div class="form-group">
+                <label for="Description">Description:</label>
+                <textarea class="form-control" name="descriptionMedical" rows="5" id="taDescriptionMedical"></textarea>
+            </div>
+        </div>
+
+
+        <!--
+            Next of Kin
+        -->
+        <div id="menu6" class="tab-pane fade">
+            <h3>Patient Next of Kin</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Description
+                        </th>
+
+
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="form-inline">
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Government&nbsp;Id:</span>
+
+                    <input type="text" id="txtGovernmentIdNOK" name="governmentId" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                </div>
+
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Passport&nbsp;Number:</span>
+
+                    <input type="text" id="txtPassportNOK" name="passport" class="form-control" style="width:300px;float:left ; margin-left:100px" />
+
+
+                </div>
+            </div>
+            <br />
+            <div class="form-inline">
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Last&nbsp;Name:</span>
+
+                    <input type="text" id="txtSurnameNOK" name="surname" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                </div>
+
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">First&nbsp;Name:</span>
+
+                    <input type="text" id="txtNameNOK" name="name" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                </div>
+            </div>
+            <br />
+            <div class="form-inline">
+
+                <div class="form-group">
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Gender:</span>
+
+                    <select class="form-control" style="width:300px;float:left; margin-left:100px" id="GenderNOK">
+                        <option disabled selected> None </option>
+                        @foreach (var g in ViewBag.Gender)
+                        {
+                            <option value="@g.Value">@g.Text</option>
+                        }
+                    </select>
+
+                </div>
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Date&nbsp;of&nbsp;Birth:</span>
+
+                    <input type="date" id="dpDOBNOK" name="dob" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <br />
+            <div class="form-inline">
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Island:</span>
+
+                    <select class="form-control" id="IslandNOKDD" style="width:300px;float:left; margin-left:100px" onchange="getNOKLocality(this.value)">
+                        <option disabled selected> None </option>
+                        @foreach (var i in ViewBag.Island)
+                        {
+                            <option value="@i.Value">@i.Text</option>
+                        }
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Locality:</span>
+
+                    <select class="form-control" id="LocalityNOKDD" name="localityNOKDD" style="width:300px;float:left; margin-left:100px" onchange="getNOKStreet(this.value)"></select>
+
+                </div>
+            </div>
+            <br />
+
+            <div class="form-inline">
+                <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Street:</span>
+                <div class="col-sm-10">
+                    <select class="form-control" id="StreetNOKDD" name="streetNOKDD" style="display: inline;width:700px;margin-left:80px" onchange="getNOKProperty(this.value)"></select>
+                    <input class="form-control" type="text" id="txtNOKAddStreet" name="NOKaddStreet" style="display: inline;width:700px;margin-left:80px" />
+                    <input type="button" id="btnNOKAddStreet" name="ON" value="Add Street" onclick="return toggleNOKStreet(this.name)" />
+
+                </div>
+            </div>
+
+            <br />    <br /><br />
+
+
+
+            <div class="form-inline">
+                <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Property:</span>
+                <div class="col-sm-10">
+                    <select class="form-control" id="PropertyNOKDD" name="propertyNOKDD" style="display: inline;width:700px;margin-left:80px"></select>
+                    <input class="form-control" type="text" id="txtNOKAddProperty" name="addNOKProperty" style="display: inline;width:700px;margin-left:80px" />
+                    <input type="button" id="btnNOKAddProperty" name="ON" value="Add Property" onclick="return toggleNOKProperty(this.name)" />
+                </div>
+            </div>
+            <br /><br />
+
+
+            <div class="form-inline">
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Telephone&nbsp;Number:</span>
+
+                    <input type="number" id="txtTelephoneNOK" name="telephone" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                </div>
+
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Mobile&nbsp;Number:</span>
+
+                    <input type="number" id="txtMobileNOK" name="mobile" class="form-control" style="width:300px;float:left ; margin-left:100px" />
+
+
+                </div>
+            </div>
+            <br />
+
+            <div class="form-inline">
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Email:</span>
+
+                    <input type="email" id="txtEmailNOK" name="txtEmailNOK" class="form-control" style="width:300px;float:left; margin-left:100px" />
+
+
+                </div>
+                <div class="form-group">
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Title:</span>
+
+                    <select class="form-control" style="width:300px;float:left; margin-left:100px" id="nextOfKinTitle">
+                        <option disabled selected> None </option>
+                        @foreach (var t in ViewBag.Titles)
+                        {
+                            <option value="@t.Value">@t.Text</option>
+                        }
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+            <br />
+            <div class="form-inline">
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Relation:</span>
+
+                    <select class="form-control" style="width:300px;float:left; margin-left:100px" id="nextOfKinRelation">
+                        <option disabled selected> None </option>
+                        @foreach (var r in ViewBag.Relation)
+                        {
+                            <option value="@r.Value">@r.Text</option>
+                        }
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Other&nbsp;Relationship:</span>
+
+                    <input type="text" id="txtOtherRelation" name="otherRelation" class="form-control" style="width:300px;float:left ; margin-left:100px" />
+
+
+                </div>
+            </div>
+            <br />
+            <div class="form-inline">
+                <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Remarks:</span>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" id="txtNOKRemarks" name="nokRemark" style="display: inline;width:820px;margin-left:80px" />
+                </div>
+            </div>
+        </div>
+
+
+        <!--
+            Patient Case Conference
+        -->
+        <div id="menu7" class="tab-pane fade">
+            <h3>Patient Case Conferance</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Remarks
+                        </th>
+
+
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="dateCaseConferance">Date:</label>
+                    <input type="date" class="form-control" name="dateCaseConferance" id="dateCaseConferance" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="CaseConferance">Point:</label>
+                <textarea class="form-control" name="pointCaseConferance" rows="5" id="pointCaseConferance"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="CaseConferance">Resolution:</label>
+                <textarea class="form-control" name="resolutionCaseConferance" rows="5" id="resolutionCaseConferance"></textarea>
+            </div>
+
+        </div>
+
+
+        <!--
+            Equipment 
+        -->
+        <div id="menu8" class="tab-pane fade">
+            <h3>Patient Equipment</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Descriptions
+                        </th>
+
+
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="form-inline">
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Date:</span>
+
+                    <div class="col-sm-10">
+                        <input class="form-control" type="date" id="dpEquipment" name="dpEquipment" style="display: inline;width:700px;margin-left:80px" />
+
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-inline">
+                <div class="form-group">
+
+                    <span class="col-sm-2 control-label" style="width:100px;float:left;text-align:right">Equipment&nbsp;Type:</span>
+
+                    <div class="col-sm-10">
+                        <select class="form-control" style="display: inline;width:700px;margin-left:80px" id="EquipmentType">
+                            <option disabled selected> None </option>
+                            @foreach (var et in ViewBag.EquipmentType)
+                            {
+                                <option value="@et.Value">@et.Text</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br /><br />
+
+            <div class="form-group">
+                <label for="CaseConferance">Remarks:</label>
+                <textarea class="form-control" name="EquipmentRemarks" rows="5" id="EquipmentRemarks"></textarea>
+            </div>
+        </div>
+
+    </div>
+</div>

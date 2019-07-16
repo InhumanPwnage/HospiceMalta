@@ -1,0 +1,10 @@
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\Common\bin\Debug\Common.dll.config
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\Common\bin\Debug\Common.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\Common\bin\Debug\Common.pdb
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\Common\bin\Debug\EntityFramework.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\Common\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\Common\bin\Debug\EntityFramework.xml
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\Common\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\Common\obj\Debug\Common.dll
+c:\users\julian\documents\visual studio 2013\Projects\HospiceMalta\Common\obj\Debug\Common.pdb
+C:\Users\Julian\Documents\Visual Studio 2013\Projects\HospiceMalta\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

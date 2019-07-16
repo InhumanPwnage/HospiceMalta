@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HospiceSysModelStoreContainer" CdmEntityContainer="HospiceSysEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HospiceSysModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accommodations">
+      <EntityTypeMapping TypeName="HospiceSysModel.Accommodation">
+        <MappingFragment StoreEntitySet="Accommodations">
+          <ScalarProperty Name="AccommmodationName" ColumnName="AccommmodationName" />
+          <ScalarProperty Name="AccommodationId" ColumnName="AccommodationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllergiesSpirituals">
+      <EntityTypeMapping TypeName="HospiceSysModel.AllergiesSpiritual">
+        <MappingFragment StoreEntitySet="AllergiesSpirituals">
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="SpiritualDescription" ColumnName="SpiritualDescription" />
+          <ScalarProperty Name="SpiritualDate" ColumnName="SpiritualDate" />
+          <ScalarProperty Name="AllergyDescription" ColumnName="AllergyDescription" />
+          <ScalarProperty Name="AllergyType" ColumnName="AllergyType" />
+          <ScalarProperty Name="AllergiesSpiritualId" ColumnName="AllergiesSpiritualId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentOrigins">
+      <EntityTypeMapping TypeName="HospiceSysModel.AssessmentOrigin">
+        <MappingFragment StoreEntitySet="AssessmentOrigins">
+          <ScalarProperty Name="AssesmentOriginName" ColumnName="AssesmentOriginName" />
+          <ScalarProperty Name="AssesmentOriginId" ColumnName="AssesmentOriginId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assessments">
+      <EntityTypeMapping TypeName="HospiceSysModel.Assessment">
+        <MappingFragment StoreEntitySet="Assessments">
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="ConfirmationDate" ColumnName="ConfirmationDate" />
+          <ScalarProperty Name="Confirmed" ColumnName="Confirmed" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Origin_fk" ColumnName="Origin_fk" />
+          <ScalarProperty Name="Worker_fk" ColumnName="Worker_fk" />
+          <ScalarProperty Name="AssesmentType_fk" ColumnName="AssesmentType_fk" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="AssesmentId" ColumnName="AssesmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssessmentTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.AssessmentType">
+        <MappingFragment StoreEntitySet="AssessmentTypes">
+          <ScalarProperty Name="AssesmentTypeName" ColumnName="AssesmentTypeName" />
+          <ScalarProperty Name="AssesmentTypeId" ColumnName="AssesmentTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarePlans">
+      <EntityTypeMapping TypeName="HospiceSysModel.CarePlan">
+        <MappingFragment StoreEntitySet="CarePlans">
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="CarePlanDisable" ColumnName="CarePlanDisable" />
+          <ScalarProperty Name="CarePlanDate" ColumnName="CarePlanDate" />
+          <ScalarProperty Name="CarePlanRemarks" ColumnName="CarePlanRemarks" />
+          <ScalarProperty Name="CarePlanStatus" ColumnName="CarePlanStatus" />
+          <ScalarProperty Name="CarePlanType" ColumnName="CarePlanType" />
+          <ScalarProperty Name="CarePlanID" ColumnName="CarePlanID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarePlanStatuses">
+      <EntityTypeMapping TypeName="HospiceSysModel.CarePlanStatus">
+        <MappingFragment StoreEntitySet="CarePlanStatuses">
+          <ScalarProperty Name="CarePlanStatusName" ColumnName="CarePlanStatusName" />
+          <ScalarProperty Name="CarePlanStatusId" ColumnName="CarePlanStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarePlanTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.CarePlanType">
+        <MappingFragment StoreEntitySet="CarePlanTypes">
+          <ScalarProperty Name="CareplanTypeName" ColumnName="CareplanTypeName" />
+          <ScalarProperty Name="CarePlanTypeId" ColumnName="CarePlanTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaseConferances">
+      <EntityTypeMapping TypeName="HospiceSysModel.CaseConferance">
+        <MappingFragment StoreEntitySet="CaseConferances">
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="CaseConferanceResolution" ColumnName="CaseConferanceResolution" />
+          <ScalarProperty Name="CaseConferancePoint" ColumnName="CaseConferancePoint" />
+          <ScalarProperty Name="CaseConferanceDate" ColumnName="CaseConferanceDate" />
+          <ScalarProperty Name="CaseConferanceId" ColumnName="CaseConferanceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeceasedPlaces">
+      <EntityTypeMapping TypeName="HospiceSysModel.DeceasedPlace">
+        <MappingFragment StoreEntitySet="DeceasedPlaces">
+          <ScalarProperty Name="DeceasedPlaceName" ColumnName="DeceasedPlaceName" />
+          <ScalarProperty Name="DeceasedplaceId" ColumnName="DeceasedplaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiagnosisPatients">
+      <EntityTypeMapping TypeName="HospiceSysModel.DiagnosisPatient">
+        <MappingFragment StoreEntitySet="DiagnosisPatients">
+          <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+          <ScalarProperty Name="DiagnosisDate" ColumnName="DiagnosisDate" />
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="DiagnosisType_fk" ColumnName="DiagnosisType_fk" />
+          <ScalarProperty Name="DiagnosisId" ColumnName="DiagnosisId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiagnosisTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.DiagnosisType">
+        <MappingFragment StoreEntitySet="DiagnosisTypes">
+          <ScalarProperty Name="DiagnosisName" ColumnName="DiagnosisName" />
+          <ScalarProperty Name="DiagnosisId" ColumnName="DiagnosisId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctors">
+      <EntityTypeMapping TypeName="HospiceSysModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctors">
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="DEmployeeId_FK" ColumnName="DEmployeeId_FK" />
+          <ScalarProperty Name="DoctorDate" ColumnName="DoctorDate" />
+          <ScalarProperty Name="DoctorType_FK" ColumnName="DoctorType_FK" />
+          <ScalarProperty Name="PatientId_FK" ColumnName="PatientId_FK" />
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoctorTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.DoctorType">
+        <MappingFragment StoreEntitySet="DoctorTypes">
+          <ScalarProperty Name="DoctorTypeName" ColumnName="DoctorTypeName" />
+          <ScalarProperty Name="DoctorTypeId" ColumnName="DoctorTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="HospiceSysModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Personfk" ColumnName="Personfk" />
+          <ScalarProperty Name="NextOfKin_fk" ColumnName="NextOfKin_fk" />
+          <ScalarProperty Name="WorkTypes_fk" ColumnName="WorkTypes_fk" />
+          <ScalarProperty Name="Occupations_fk" ColumnName="Occupations_fk" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ViewPatient" ColumnName="ViewPatient" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="EmployeesId" ColumnName="EmployeesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipments">
+      <EntityTypeMapping TypeName="HospiceSysModel.Equipment">
+        <MappingFragment StoreEntitySet="Equipments">
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="EquipmentRemarks" ColumnName="EquipmentRemarks" />
+          <ScalarProperty Name="EquipmentType_fk" ColumnName="EquipmentType_fk" />
+          <ScalarProperty Name="EquipmentDate" ColumnName="EquipmentDate" />
+          <ScalarProperty Name="EquipmentId" ColumnName="EquipmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquipmentTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.EquipmentType">
+        <MappingFragment StoreEntitySet="EquipmentTypes">
+          <ScalarProperty Name="EquipmentTypeName" ColumnName="EquipmentTypeName" />
+          <ScalarProperty Name="EquipmentTypeId" ColumnName="EquipmentTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FamilySocials">
+      <EntityTypeMapping TypeName="HospiceSysModel.FamilySocial">
+        <MappingFragment StoreEntitySet="FamilySocials">
+          <ScalarProperty Name="SocialNumberOfFloors" ColumnName="SocialNumberOfFloors" />
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="FamilyHistory" ColumnName="FamilyHistory" />
+          <ScalarProperty Name="SocialProblems" ColumnName="SocialProblems" />
+          <ScalarProperty Name="SocialNoOfChildren" ColumnName="SocialNoOfChildren" />
+          <ScalarProperty Name="SocialAccommodations_fk" ColumnName="SocialAccommodations_fk" />
+          <ScalarProperty Name="SocialOccupation_fk" ColumnName="SocialOccupation_fk" />
+          <ScalarProperty Name="SocialPatientStatus_fk" ColumnName="SocialPatientStatus_fk" />
+          <ScalarProperty Name="FamilySocialId" ColumnName="FamilySocialId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileStatuses">
+      <EntityTypeMapping TypeName="HospiceSysModel.FileStatus">
+        <MappingFragment StoreEntitySet="FileStatuses">
+          <ScalarProperty Name="FileStatusName" ColumnName="FileStatusName" />
+          <ScalarProperty Name="FileStatusId" ColumnName="FileStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionalAssesments">
+      <EntityTypeMapping TypeName="HospiceSysModel.FunctionalAssesment">
+        <MappingFragment StoreEntitySet="FunctionalAssesments">
+          <ScalarProperty Name="FunctionalAssesmentDisable" ColumnName="FunctionalAssesmentDisable" />
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="FunctionalAssesmentDescription" ColumnName="FunctionalAssesmentDescription" />
+          <ScalarProperty Name="FunctionalAssesmentType" ColumnName="FunctionalAssesmentType" />
+          <ScalarProperty Name="FunctionalAssesmentId" ColumnName="FunctionalAssesmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionalAssessmentTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.FunctionalAssessmentType">
+        <MappingFragment StoreEntitySet="FunctionalAssessmentTypes">
+          <ScalarProperty Name="FunctionalAssessmentType1" ColumnName="FunctionalAssessmentType" />
+          <ScalarProperty Name="FunctionalAssessmentTypeId" ColumnName="FunctionalAssessmentTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="HospiceSysModel.Gender">
+        <MappingFragment StoreEntitySet="Genders">
+          <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GeneralObservations">
+      <EntityTypeMapping TypeName="HospiceSysModel.GeneralObservation">
+        <MappingFragment StoreEntitySet="GeneralObservations">
+          <ScalarProperty Name="GeneralObservationDisable" ColumnName="GeneralObservationDisable" />
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="GeneralObservationRemarks" ColumnName="GeneralObservationRemarks" />
+          <ScalarProperty Name="GeneralObservationType" ColumnName="GeneralObservationType" />
+          <ScalarProperty Name="GeneralObservationId" ColumnName="GeneralObservationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GeneralObservationTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.GeneralObservationType">
+        <MappingFragment StoreEntitySet="GeneralObservationTypes">
+          <ScalarProperty Name="GeneralObservationType1" ColumnName="GeneralObservationType" />
+          <ScalarProperty Name="GeneralObservationTypeId" ColumnName="GeneralObservationTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IllnessesMedicals">
+      <EntityTypeMapping TypeName="HospiceSysModel.IllnessesMedical">
+        <MappingFragment StoreEntitySet="IllnessesMedicals">
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="MedicalDescription" ColumnName="MedicalDescription" />
+          <ScalarProperty Name="MedicalType_fk" ColumnName="MedicalType_fk" />
+          <ScalarProperty Name="IllnessesEventsOfRevelance" ColumnName="IllnessesEventsOfRevelance" />
+          <ScalarProperty Name="IllnessesDate" ColumnName="IllnessesDate" />
+          <ScalarProperty Name="IllnessesMedicalId" ColumnName="IllnessesMedicalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incomes">
+      <EntityTypeMapping TypeName="HospiceSysModel.Income">
+        <MappingFragment StoreEntitySet="Incomes">
+          <ScalarProperty Name="IncomeName" ColumnName="IncomeName" />
+          <ScalarProperty Name="IncomeId" ColumnName="IncomeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Islands">
+      <EntityTypeMapping TypeName="HospiceSysModel.Island">
+        <MappingFragment StoreEntitySet="Islands">
+          <ScalarProperty Name="IslandName" ColumnName="IslandName" />
+          <ScalarProperty Name="IslandId" ColumnName="IslandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Localities">
+      <EntityTypeMapping TypeName="HospiceSysModel.Locality">
+        <MappingFragment StoreEntitySet="Localities">
+          <ScalarProperty Name="Island_fk" ColumnName="Island_fk" />
+          <ScalarProperty Name="LocalityName" ColumnName="LocalityName" />
+          <ScalarProperty Name="LocalityId" ColumnName="LocalityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="HospiceSysModel.Location">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicalTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.MedicalType">
+        <MappingFragment StoreEntitySet="MedicalTypes">
+          <ScalarProperty Name="MedicalTypeName" ColumnName="MedicalTypeName" />
+          <ScalarProperty Name="MedicalTypeId" ColumnName="MedicalTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medications">
+      <EntityTypeMapping TypeName="HospiceSysModel.Medication">
+        <MappingFragment StoreEntitySet="Medications">
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="MedicationDescription" ColumnName="MedicationDescription" />
+          <ScalarProperty Name="MedicationDate" ColumnName="MedicationDate" />
+          <ScalarProperty Name="MedicationId" ColumnName="MedicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NextOfKins">
+      <EntityTypeMapping TypeName="HospiceSysModel.NextOfKin">
+        <MappingFragment StoreEntitySet="NextOfKin">
+          <ScalarProperty Name="supportNetworkRelation" ColumnName="supportNetworkRelation" />
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="ContactRelation" ColumnName="ContactRelation" />
+          <ScalarProperty Name="PrimaryRelation" ColumnName="PrimaryRelation" />
+          <ScalarProperty Name="NextOfKinRemark" ColumnName="NextOfKinRemark" />
+          <ScalarProperty Name="OtherRelationship" ColumnName="OtherRelationship" />
+          <ScalarProperty Name="Relation_fk" ColumnName="Relation_fk" />
+          <ScalarProperty Name="Personfk" ColumnName="Personfk" />
+          <ScalarProperty Name="NextOfKinId" ColumnName="NextOfKinId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Occupations">
+      <EntityTypeMapping TypeName="HospiceSysModel.Occupation">
+        <MappingFragment StoreEntitySet="Occupations">
+          <ScalarProperty Name="OccupationName" ColumnName="OccupationName" />
+          <ScalarProperty Name="OccupationId" ColumnName="OccupationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OriginOfReferrals">
+      <EntityTypeMapping TypeName="HospiceSysModel.OriginOfReferral">
+        <MappingFragment StoreEntitySet="OriginOfReferrals">
+          <ScalarProperty Name="OriginOfReferralName" ColumnName="OriginOfReferralName" />
+          <ScalarProperty Name="OriginOfReferralId" ColumnName="OriginOfReferralId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientAssesments">
+      <EntityTypeMapping TypeName="HospiceSysModel.PatientAssesment">
+        <MappingFragment StoreEntitySet="PatientAssesment">
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="PatientAssesmentId" ColumnName="PatientAssesmentId" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientAssessmentGrades">
+      <EntityTypeMapping TypeName="HospiceSysModel.PatientAssessmentGrade">
+        <MappingFragment StoreEntitySet="PatientAssessmentGrades">
+          <ScalarProperty Name="PatientAssessmentTypeId_fk" ColumnName="PatientAssessmentTypeId_fk" />
+          <ScalarProperty Name="PatientAssessmentGradeName" ColumnName="PatientAssessmentGradeName" />
+          <ScalarProperty Name="PatientAssessmentGradeId" ColumnName="PatientAssessmentGradeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientAssessmentTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.PatientAssessmentType">
+        <MappingFragment StoreEntitySet="PatientAssessmentTypes">
+          <ScalarProperty Name="PatientAssessmentTypeName" ColumnName="PatientAssessmentTypeName" />
+          <ScalarProperty Name="PatientAssesmentTypeId" ColumnName="PatientAssesmentTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientAwarenesses">
+      <EntityTypeMapping TypeName="HospiceSysModel.PatientAwareness">
+        <MappingFragment StoreEntitySet="PatientAwareness">
+          <ScalarProperty Name="PatientAwareName" ColumnName="PatientAwareName" />
+          <ScalarProperty Name="PatientAwareId" ColumnName="PatientAwareId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="HospiceSysModel.Patient">
+        <MappingFragment StoreEntitySet="Patients">
+          <ScalarProperty Name="Personfk" ColumnName="Personfk" />
+          <ScalarProperty Name="FileStatus_fk" ColumnName="FileStatus_fk" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="FamilyDoctor_fk" ColumnName="FamilyDoctor_fk" />
+          <ScalarProperty Name="RelativesAware_fk" ColumnName="RelativesAware_fk" />
+          <ScalarProperty Name="PatientAware_fk" ColumnName="PatientAware_fk" />
+          <ScalarProperty Name="Diagnosis_fk" ColumnName="Diagnosis_fk" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Consultant_fk" ColumnName="Consultant_fk" />
+          <ScalarProperty Name="Oncologist_fk" ColumnName="Oncologist_fk" />
+          <ScalarProperty Name="DeceasedPlaceOther" ColumnName="DeceasedPlaceOther" />
+          <ScalarProperty Name="DeceasedDate" ColumnName="DeceasedDate" />
+          <ScalarProperty Name="DeceasedPlace_fk" ColumnName="DeceasedPlace_fk" />
+          <ScalarProperty Name="OriginOfReferral_fk" ColumnName="OriginOfReferral_fk" />
+          <ScalarProperty Name="DateOfFirstContact" ColumnName="DateOfFirstContact" />
+          <ScalarProperty Name="FileNumber" ColumnName="FileNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientsEmployees">
+      <EntityTypeMapping TypeName="HospiceSysModel.PatientsEmployee">
+        <MappingFragment StoreEntitySet="PatientsEmployees">
+          <ScalarProperty Name="PatientDate" ColumnName="PatientDate" />
+          <ScalarProperty Name="EmployeeId_fk" ColumnName="EmployeeId_fk" />
+          <ScalarProperty Name="PatientFileNumber_fk" ColumnName="PatientFileNumber_fk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientsIncomes">
+      <EntityTypeMapping TypeName="HospiceSysModel.PatientsIncome">
+        <MappingFragment StoreEntitySet="PatientsIncomes">
+          <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+          <ScalarProperty Name="FamilySocialIdFk" ColumnName="FamilySocialIdFk" />
+          <ScalarProperty Name="IncomeIdFk" ColumnName="IncomeIdFk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientStatuses">
+      <EntityTypeMapping TypeName="HospiceSysModel.PatientStatus">
+        <MappingFragment StoreEntitySet="PatientStatuses">
+          <ScalarProperty Name="PatientStatusName" ColumnName="PatientStatusName" />
+          <ScalarProperty Name="PatientStatusId" ColumnName="PatientStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persons">
+      <EntityTypeMapping TypeName="HospiceSysModel.Person">
+        <MappingFragment StoreEntitySet="Persons">
+          <ScalarProperty Name="IdCardNumber" ColumnName="IdCardNumber" />
+          <ScalarProperty Name="Title_fk" ColumnName="Title_fk" />
+          <ScalarProperty Name="Property_fk" ColumnName="Property_fk" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="Gender_fk" ColumnName="Gender_fk" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Physiotherapies">
+      <EntityTypeMapping TypeName="HospiceSysModel.Physiotherapy">
+        <MappingFragment StoreEntitySet="Physiotherapies">
+          <ScalarProperty Name="PhysiotherapyDisable" ColumnName="PhysiotherapyDisable" />
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="LocationIdPhy" ColumnName="LocationIdPhy" />
+          <ScalarProperty Name="PhysiotherapyRemarks" ColumnName="PhysiotherapyRemarks" />
+          <ScalarProperty Name="PhysiotherapyType" ColumnName="PhysiotherapyType" />
+          <ScalarProperty Name="PhysiotherapyId" ColumnName="PhysiotherapyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhysiotherapyTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.PhysiotherapyType">
+        <MappingFragment StoreEntitySet="PhysiotherapyTypes">
+          <ScalarProperty Name="PhysiotherapyType1" ColumnName="PhysiotherapyType" />
+          <ScalarProperty Name="PhysiotherapyTypeId" ColumnName="PhysiotherapyTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Problems">
+      <EntityTypeMapping TypeName="HospiceSysModel.Problem">
+        <MappingFragment StoreEntitySet="Problems">
+          <ScalarProperty Name="ProblemsDisable" ColumnName="ProblemsDisable" />
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="ProblemsDescription" ColumnName="ProblemsDescription" />
+          <ScalarProperty Name="ProblemsType" ColumnName="ProblemsType" />
+          <ScalarProperty Name="ProblemsId" ColumnName="ProblemsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProblemTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.ProblemType">
+        <MappingFragment StoreEntitySet="ProblemTypes">
+          <ScalarProperty Name="ProblemType1" ColumnName="ProblemType" />
+          <ScalarProperty Name="ProblemTypeId" ColumnName="ProblemTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Properties">
+      <EntityTypeMapping TypeName="HospiceSysModel.Property">
+        <MappingFragment StoreEntitySet="Properties">
+          <ScalarProperty Name="Street_fk" ColumnName="Street_fk" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Relations">
+      <EntityTypeMapping TypeName="HospiceSysModel.Relation">
+        <MappingFragment StoreEntitySet="Relations">
+          <ScalarProperty Name="RelationName" ColumnName="RelationName" />
+          <ScalarProperty Name="RelationId" ColumnName="RelationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelativeAwarenesses">
+      <EntityTypeMapping TypeName="HospiceSysModel.RelativeAwareness">
+        <MappingFragment StoreEntitySet="RelativeAwareness">
+          <ScalarProperty Name="RelativeAwareName" ColumnName="RelativeAwareName" />
+          <ScalarProperty Name="RelativeAwareId" ColumnName="RelativeAwareId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="HospiceSysModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleCode" ColumnName="RoleCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Streets">
+      <EntityTypeMapping TypeName="HospiceSysModel.Street">
+        <MappingFragment StoreEntitySet="Streets">
+          <ScalarProperty Name="Locality_fk" ColumnName="Locality_fk" />
+          <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+          <ScalarProperty Name="StreetId" ColumnName="StreetId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Symptomatologies">
+      <EntityTypeMapping TypeName="HospiceSysModel.Symptomatology">
+        <MappingFragment StoreEntitySet="Symptomatologies">
+          <ScalarProperty Name="SymptomatologyDisable" ColumnName="SymptomatologyDisable" />
+          <ScalarProperty Name="LocationIdSym" ColumnName="LocationIdSym" />
+          <ScalarProperty Name="SymptomatologyRemark" ColumnName="SymptomatologyRemark" />
+          <ScalarProperty Name="SymptomatologyGrade" ColumnName="SymptomatologyGrade" />
+          <ScalarProperty Name="SymptomatologyType" ColumnName="SymptomatologyType" />
+          <ScalarProperty Name="PatientId_fk" ColumnName="PatientId_fk" />
+          <ScalarProperty Name="SymptomatologyId" ColumnName="SymptomatologyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SymptomatologyGrades">
+      <EntityTypeMapping TypeName="HospiceSysModel.SymptomatologyGrade">
+        <MappingFragment StoreEntitySet="SymptomatologyGrades">
+          <ScalarProperty Name="SymptomatologyGrade1" ColumnName="SymptomatologyGrade" />
+          <ScalarProperty Name="SymptomatologyGradeId" ColumnName="SymptomatologyGradeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SymptomatologyTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.SymptomatologyType">
+        <MappingFragment StoreEntitySet="SymptomatologyTypes">
+          <ScalarProperty Name="SymptomatologyType1" ColumnName="SymptomatologyType" />
+          <ScalarProperty Name="SymptomatologyTypeId" ColumnName="SymptomatologyTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titles">
+      <EntityTypeMapping TypeName="HospiceSysModel.Title">
+        <MappingFragment StoreEntitySet="Titles">
+          <ScalarProperty Name="TitleName" ColumnName="TitleName" />
+          <ScalarProperty Name="TitleId" ColumnName="TitleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkTypes">
+      <EntityTypeMapping TypeName="HospiceSysModel.WorkType">
+        <MappingFragment StoreEntitySet="WorkTypes">
+          <ScalarProperty Name="WorkTypeName" ColumnName="WorkTypeName" />
+          <ScalarProperty Name="WorkTypeId" ColumnName="WorkTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="EmployeesRoles" TypeName="HospiceSysModel.EmployeesRoles" StoreEntitySet="EmployeesRoles">
+      <EndProperty Name="Role">
+        <ScalarProperty Name="RoleCode" ColumnName="RoleCode" />
+      </EndProperty>
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="EmployeesId" ColumnName="EmployeeIdCardNumber" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

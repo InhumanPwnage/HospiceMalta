@@ -1,0 +1,459 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Stylize.css" rel="stylesheet" />
+<script src="~/Scripts/dev/PageControl.js"></script>
+<script src="~/Scripts/dev/AsyncManagement.js"></script>
+<script src="~/Scripts/dev/InputValidation.js"></script>
+<script src="~/Scripts/dev/EmailPopup.js"></script>
+
+<!--<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
+
+<h2 style="text-align:center;">Assessments</h2>
+
+<!--
+    http://forums.asp.net/t/2051241.aspx?Displaying+table+in+asp+net+MVC+view+with+scrollbar
+
+    scrollable TABLE of assessments, sorted chronologically with most recent at the top, goes here
+-->
+
+<div class="containment2">
+    
+    <ul class="nav nav-tabs"><!-- nav-justified -->
+        <li class="active">
+            <a data-toggle="tab" href="#assessm">Assessments</a>
+        </li>
+        <li><a data-toggle="tab" href="#patient">Patient Assessments</a></li>
+        <li><a data-toggle="tab" href="#carepla">Care Plan</a></li>
+        <li><a data-toggle="tab" href="#symptom" id="sympTab">Symptomatology</a></li>
+        <li><a data-toggle="tab" href="#functio" id="funcTab">Functional Assessments</a></li>
+        <li><a data-toggle="tab" href="#general" id="geneTab">General Observations</a></li>
+        <li><a data-toggle="tab" href="#problem" id="probTab">Problems</a></li>
+        <li><a data-toggle="tab" href="#physiot" id="physTab">Physiotherapy</a></li>
+    </ul>
+
+    <!--
+        
+    -->
+
+    
+    <div class="tab-content">
+
+        <!-- Assessments-->
+            <div id="assessm" class="tab-pane fade in active">
+                <form method="post" onsubmit="return SaveAssessment();" action="/assessments/index" id="assessm" class="form-horizontal">
+                    <br />
+                    <h4 style="text-align:center;">Assessments</h4>
+                    <br />
+                    <div id="assContent">
+                        <div id="left">
+                            <div class="form-group">
+                                <label for="assDate" class="col-sm-2 control-label" id="assess">Date</label>
+                                <div class="col-md-12">
+                                    <input type="date" class="form-control form-control-inline" id="assDate" name="assDate" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="assDuration" class="col-sm-2 control-label" id="assess">Duration</label>
+                                <div class="col-md-12">
+                                    <input type="number" class="form-control form-control-inline" id="assDuration" step="1" min="1" max="420" maxlength="3" name="assDuration" /> minutes
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="assddlTypes" class="col-sm-2 control-label" id="assess">Type</label>
+                                    <!--Html.DropDownList("asstypes", (IEnumerable<SelectListItem>)ViewBag.asstypes, "Pick Assessment Type", new { class = "col-md-12 form-control form-control-inline", id ="assddlTypes" })-->
+                                <div class="col-md-12" id="assdivType">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="assConfirmed" class="col-sm-2 control-label">Confirmed</label>
+                                <div class="col-lg-6">
+                                    <!--<input type="checkbox" id="assConfirmed" class="form-control-inline" name="assConfirmed" value="true" checked />-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="right">
+                            <div class="form-group form-inline">
+                                <label for="assTime" class="col-sm-2 control-label" id="assess">Time</label>
+                                <div class="col-md-12">
+                                    <input type="time" class="form-control form-control-inline" placeholder="Pick time" id="assTime" name="assTime" />
+                                    <button type="button" class="btn btn-default" id="btnTime" onclick="GetNewCurrentTime()"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Current Time</button>  (24h)
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="assddlOrigins" class="col-sm-2 control-label" id="assess">Origin</label>
+                                <div class="col-md-12" id="assdivOrigin">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="assddlWorkers" class="col-sm-2 control-label" id="assess">Worker</label>
+                                <div class="col-md-12" id="assdivWorker">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="assConfirmDate" class="col-sm-2 control-label" id="assess">Confirm Date</label>
+                                <div class="col-md-12">
+                                    <input type="date" class="form-control form-control-inline" id="assConfirmDate" name="assConfirmDate" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="clear:both;">
+                        <label for="assDescription" class="col-sm-1 control-label" id="assess">Description</label>
+                        <div class="col-md-12">
+                            <textarea maxlength="1000" rows="10" cols="100" id="assDescription" class="form-control" style="max-width: 100%; width:100%; height: 120px; resize: vertical;" placeholder="Enter text here..."></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="text-center">
+                        <button type="reset" class="btn btn-warning" id="btnReset" onclick="ResetTabs()"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Reset</button>
+                        <button type="submit" class="btn btn-success" id="btnSave" name="action:SaveAssessment"><span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save</button>
+                        <button type="button" class="btn btn-info" id="btnEmail" onclick="SendEmail(1)"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</button>
+                        <button type="button" class="btn btn-primary" id="btnNext" onclick="Next()">Patient <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+                    </div>
+
+                    <br />
+
+                    <table class="table table-bordered table-striped table-condensed table-hover" id="assAssessments">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    Role
+                                </th>
+                                <th>
+                                    Worker
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <input type="hidden" id="AssesmentId" name="AssesmentId" value="" />
+                    <input type="hidden" id="assPatient" name="assPatient" value="1" />
+                </form>
+            </div>
+
+
+        <!-- Patient Assessments-->
+            <div id="patient" class="tab-pane fade">
+                <form method="post" onsubmit="return SavePatient();" action="/assessments/index" class="form-horizontal" id="patienta">
+                    <br />
+                    <h4 style="text-align:center;">Patient Assessments</h4>
+                    <br />
+                    <div id="patContent">
+                        <div id="left">
+                            <div class="form-group">
+                                <label for="patddlTypes" class="col-sm-2 control-label" id="patien">Type</label>
+                                <div class="col-md-12" id="patType">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="right">
+                            <div class="form-group">
+                                <label for="patddlGrades" class="col-sm-2 control-label" id="patien">Grade</label>
+                                <div class="col-md-12" id="patGrade">
+                                    <select class="form-control form-control-inline" id="patddlGrades" name="patddlGrades">
+                                        <option value="-1">Select Type first!</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="clear:both;">
+                        <label for="patRemarks" class="col-sm-1 control-label" id="patien">Remarks</label>
+                        <div class="col-md-12">
+                            <textarea maxlength="1000" rows="10" cols="100" id="patRemarks" name="patRemarks" class="form-control" style="max-width: 100%; width:100%; height: 120px; resize: vertical;" placeholder="Enter text here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" id="btnPrevious" onclick="Previous()"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Assessment</button>
+                        <button type="reset" class="btn btn-warning" id="btnReset" onclick="ResetTabs()"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Reset</button>
+                        <button type="submit" class="btn btn-success" id="btnSave" name="action:SavePatientAssessment"><span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save</button>
+                        <button type="button" class="btn btn-info" id="btnEmail" onclick="SendEmail(2)"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</button>
+                        <button type="button" class="btn btn-primary" id="btnNext" onclick="Next()">Care Plan <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+                        <!-- class="pull-right" -->
+                    </div>
+                    <br />
+                    <table class="table table-bordered table-striped table-condensed table-hover" id="patAssessments">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    Grade
+                                </th>
+                                <th>
+                                    Worker
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <input type="hidden" id="PatientAssesmentId" name="PatientAssesmentId" value="" />
+                    <input type="hidden" id="patPatient" name="patPatient" value="1" />
+                </form>
+            </div>
+
+
+        <!-- Care Plan -->
+            <div id="carepla" class="tab-pane fade">
+                <form method="post" action="/assessments/index" onsubmit="return SaveCarePlan();" class="form-horizontal">
+                    <br />
+                    <h4 style="text-align:center;">Care Plan</h4>
+                    <br />
+                    <div id="carContent">
+                        <div id="left">
+                            <div class="form-group">
+                                <label for="carddlType" class="col-sm-2 control-label" id="carepl">Type</label>
+                                <div class="col-md-12" id="carType">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="carddlStatus" class="col-sm-2 control-label" id="carepl">Status</label>
+                                <div class="col-md-12" id="carStatus">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="right">
+                            <div class="form-group">
+                                <label for="carDate" class="col-sm-2 control-label" id="carepl">Date</label>
+                                <div class="col-md-12">
+                                    <input type="date" class="form-control" id="carDate" name="carDate" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="clear:both;">
+                        <label for="carRemarks" class="col-sm-1 control-label" id="carepl">Remarks</label>
+                        <div class="col-md-12">
+                            <textarea maxlength="1000" rows="10" cols="100" id="carRemarks" name="carRemarks" class="form-control" style="max-width: 100%; width:100%; height: 120px; resize: vertical;" placeholder="Enter text here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" id="btnPrevious" onclick="Previous()"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Patient</button>
+                        <button type="reset" class="btn btn-warning" id="btnReset" onclick="ResetTabs()"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Reset</button>
+                        <button type="submit" class="btn btn-success" id="btnSave" onclick="SaveCarePlan()" name="action:SaveCarePlan"><span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save</button>
+                        <button type="button" class="btn btn-info" id="btnEmail" onclick="SendEmail(3)"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</button>
+                    </div>
+                    <br />
+                    <table class="table table-bordered table-striped table-condensed table-hover" id="carePlans">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <input type="hidden" id="CarePlanId" name="CarePlanId" value="" />
+                    <input type="hidden" id="carPatient" name="carPatient" value="1" />
+                </form>
+            </div>
+
+
+            <div id="symptom" class="tab-pane fade">
+                <form method="post" action="/assessments/index" onsubmit="return SaveSymptomatology();" class="form-horizontal">
+                    <br />
+                    <h4 style="text-align:center;">Symptomatology</h4>
+                    <br />
+                    <div id="carContent">
+                        <div id="left">
+                            <div class="form-group">
+                                <label for="symddlType" class="col-sm-2 control-label" id="sympto">Type</label>
+                                <div class="col-md-12" id="symType">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="symddlLocation" class="col-sm-2 control-label" id="sympto">Location</label>
+                                <div class="col-md-12" id="symLocation">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="right">
+                            <div class="form-group">
+                                <label for="symddlGrade" class="col-sm-2 control-label" id="sympto">Grade</label>
+                                <div class="col-md-12" id="symGrade">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="clear:both;">
+                        <label for="symRemarks" class="col-sm-1 control-label" id="carepl">Remarks</label>
+                        <div class="col-md-12">
+                            <textarea maxlength="1000" rows="10" cols="100" id="symRemarks" name="symRemarks" class="form-control" style="max-width: 100%; width:100%; height: 120px; resize: vertical;" placeholder="Enter text here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-info" id="btnEmail" onclick="SendEmail(4)"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Email</button>
+                    </div>
+                    <br />
+                    <table class="table table-bordered table-striped table-condensed table-hover" id="sympToma">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <input type="hidden" id="SymptomatologyId" name="SymptomatologyId" value="" />
+                    <input type="hidden" id="symPatient" name="symPatient" value="1" />
+                </form>
+            </div>
+
+
+            <div id="functio" class="tab-pane fade">
+                <h3>Functional Assessments</h3>
+
+            </div>
+            <div id="general" class="tab-pane fade">
+                <h3>General Observations</h3>
+
+            </div>
+            <div id="problem" class="tab-pane fade">
+                <h3>Problems</h3>
+
+            </div>
+            <div id="physiot" class="tab-pane fade">
+                <h3>Physiotherapy</h3>
+
+            </div>
+
+        <!--
+            <input type="hidden" id="AssesmentId" value="" />
+        -->
+                
+
+            </div>
+        </div>
+
+@if (ViewBag.InvalidData != null)
+{
+    <h4 style="color:red">Invalid Data sent!</h4>
+}
+
+<div class="modal fade" id="invalidinputs" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">The following inputs are empty or invalid;</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn btn-primary btn-block" onclick="return false" data-dismiss="modal">Back</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="emailmodal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Email page as PDF</h4>
+            </div>
+            <div class="modal-body" id="emailpopup">
+                <div class="form-group">
+                    <label for="staff" class="control-label">Staff:</label>
+                    <div id="staff">
+                        <ul id="sortable1" class="connectedSortable form-control"></ul>
+                    </div>
+                    
+                    <label for="recipients" class="control-label">Recipients:</label>
+                    <div id="recipients">
+                        <ul id="sortable2" class="connectedSortable form-control"></ul>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group" style="clear:both;">
+                    <label for="message-text" class="control-label">Message (optional):</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Back</button>
+                <button type="button" class="btn btn-success" onclick="getAllInformation()" data-dismiss="modal" id="sendEmail">Send</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!--
+    -ADDING NEW ASSESSMENT (reset button clears all fields)
+    To create a new Assessment, every field will be reset
+    ONLY: Asssessment, Patient Assessment and Care Plan -- are allowed
+    DEFUNCT: Last 5 tabs -- input fields are all disabled here, and information will be loaded into them, but cannot be changed/used
+-->

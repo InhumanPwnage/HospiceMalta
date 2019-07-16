@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="HospiceSysEntities-Web.config Connection String" description="HospiceSysEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;Server=tcp:hospice-to-go.database.windows.net,1433;Data Source=hospice-to-go.database.windows.net;Initial Catalog=HospiceDB;Persist Security Info=False;User ID=ip;Password=Cobftw00;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Julian\\Documents\\Visual\ Studio\ 2013\\Projects\\HospiceMalta\\HospiceMalta\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HospiceSysEntities']/@connectionString" />
+  </parameter>
+</parameters>

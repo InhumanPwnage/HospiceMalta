@@ -1,0 +1,24 @@
+﻿
+@if (Context.User.Identity.IsAuthenticated)
+{
+    try
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/users/logout" onclick="return window.confirm('Log out?');">Logout</a></li>
+        </ul>
+    }
+    catch (NullReferenceException)
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Log in", "Login", "Users")</li>
+        </ul>
+    }
+    
+    //}
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Log in", "Login", "Users")</li>
+    </ul>
+}

@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Stylize.css" rel="stylesheet" />
+<script src="~/Scripts/dev/SearchPatient.js"></script>
+
+<div id="containment2" style="margin-top:50px">
+    <!--class="row"-->
+        <div class="form-group">
+            <input type="number" class="form-control" placeholder="Enter File Number" id="searchFileNumber" />
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder=" Enter ID Card number" id="searchIdCardNumber" />
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder=" Enter name" id="searchName" />
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder=" Enter surname" id="searchSurname" />
+        </div>
+
+        <select class="form-control" style="width:175px" id="searchFileStatus">
+            <option> Select File Status </option>@foreach (var fs in ViewBag.FileStatus)
+            {
+                <option value="@fs.Value">@fs.Text</option>
+            }
+        </select>
+
+        <select class="form-control" style="width:175px" id="searchKeyWorker">
+            <option> Select Key Worker </option>@foreach (var kw in ViewBag.KeyWorkers)
+            {
+                <option value="@kw.Value">@kw.Text</option>
+            }
+        </select>
+
+        <button type="button" class="btn btn-success" id="btnSearch" onclick="return getPatients()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+        </button>
+
+        <!--
+        <input type="button" class="btn btn-success" value="Search" onclick="return getPatients()" />-->
+</div>
+  
+<div>
+    <div id="pRecords"></div>
+</div>

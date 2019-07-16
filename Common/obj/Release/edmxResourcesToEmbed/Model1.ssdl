@@ -1,0 +1,1445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospiceSysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Accommodations">
+    <Key>
+      <PropertyRef Name="AccommodationId" />
+    </Key>
+    <Property Name="AccommodationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccommmodationName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AllergiesSpirituals">
+    <Key>
+      <PropertyRef Name="AllergiesSpiritualId" />
+    </Key>
+    <Property Name="AllergiesSpiritualId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AllergyType" Type="varchar" MaxLength="50" />
+    <Property Name="AllergyDescription" Type="varchar" MaxLength="50" />
+    <Property Name="SpiritualDate" Type="date" />
+    <Property Name="SpiritualDescription" Type="varchar" MaxLength="50" />
+    <Property Name="PatientId_fk" Type="int" />
+  </EntityType>
+  <EntityType Name="AssessmentOrigins">
+    <Key>
+      <PropertyRef Name="AssesmentOriginId" />
+    </Key>
+    <Property Name="AssesmentOriginId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssesmentOriginName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Assessments">
+    <Key>
+      <PropertyRef Name="AssesmentId" />
+    </Key>
+    <Property Name="AssesmentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Date" Type="date" />
+    <Property Name="duration" Type="int" />
+    <Property Name="time" Type="varchar" MaxLength="8" />
+    <Property Name="AssesmentType_fk" Type="uniqueidentifier" />
+    <Property Name="Worker_fk" Type="uniqueidentifier" />
+    <Property Name="Origin_fk" Type="uniqueidentifier" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Confirmed" Type="bit" />
+    <Property Name="ConfirmationDate" Type="date" />
+    <Property Name="PatientId_fk" Type="int" />
+  </EntityType>
+  <EntityType Name="AssessmentTypes">
+    <Key>
+      <PropertyRef Name="AssesmentTypeId" />
+    </Key>
+    <Property Name="AssesmentTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssesmentTypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CarePlans">
+    <Key>
+      <PropertyRef Name="CarePlanID" />
+    </Key>
+    <Property Name="CarePlanID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CarePlanType" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CarePlanStatus" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CarePlanRemarks" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CarePlanDate" Type="date" Nullable="false" />
+    <Property Name="CarePlanDisable" Type="bit" />
+    <Property Name="PatientId_fk" Type="int" />
+  </EntityType>
+  <EntityType Name="CarePlanStatuses">
+    <Key>
+      <PropertyRef Name="CarePlanStatusId" />
+    </Key>
+    <Property Name="CarePlanStatusId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CarePlanStatusName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CarePlanTypes">
+    <Key>
+      <PropertyRef Name="CarePlanTypeId" />
+    </Key>
+    <Property Name="CarePlanTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CareplanTypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CaseConferances">
+    <Key>
+      <PropertyRef Name="CaseConferanceId" />
+    </Key>
+    <Property Name="CaseConferanceId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CaseConferanceDate" Type="date" />
+    <Property Name="CaseConferancePoint" Type="varchar" MaxLength="50" />
+    <Property Name="CaseConferanceResolution" Type="varchar" MaxLength="100" />
+    <Property Name="PatientId_fk" Type="int" />
+  </EntityType>
+  <EntityType Name="DeceasedPlaces">
+    <Key>
+      <PropertyRef Name="DeceasedplaceId" />
+    </Key>
+    <Property Name="DeceasedplaceId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DeceasedPlaceName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DiagnosisPatients">
+    <Key>
+      <PropertyRef Name="DiagnosisId" />
+    </Key>
+    <Property Name="DiagnosisId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DiagnosisType_fk" Type="uniqueidentifier" />
+    <Property Name="PatientId_fk" Type="int" Nullable="false" />
+    <Property Name="DiagnosisDate" Type="date" Nullable="false" />
+    <Property Name="LogDate" Type="date" />
+  </EntityType>
+  <EntityType Name="DiagnosisTypes">
+    <Key>
+      <PropertyRef Name="DiagnosisId" />
+    </Key>
+    <Property Name="DiagnosisId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DiagnosisName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Doctors">
+    <Key>
+      <PropertyRef Name="DoctorID" />
+    </Key>
+    <Property Name="DoctorID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PatientId_FK" Type="int" />
+    <Property Name="DoctorType_FK" Type="uniqueidentifier" />
+    <Property Name="DoctorDate" Type="date" />
+    <Property Name="DEmployeeId_FK" Type="uniqueidentifier" />
+    <Property Name="DoctorName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DoctorTypes">
+    <Key>
+      <PropertyRef Name="DoctorTypeId" />
+    </Key>
+    <Property Name="DoctorTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DoctorTypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeesId" />
+    </Key>
+    <Property Name="EmployeesId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SSN" Type="varchar" MaxLength="50" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="ViewPatient" Type="bit" />
+    <Property Name="Remark" Type="varchar" MaxLength="100" />
+    <Property Name="Occupations_fk" Type="uniqueidentifier" />
+    <Property Name="WorkTypes_fk" Type="uniqueidentifier" />
+    <Property Name="NextOfKin_fk" Type="uniqueidentifier" />
+    <Property Name="Personfk" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="EmployeesRoles">
+    <Key>
+      <PropertyRef Name="EmployeeIdCardNumber" />
+      <PropertyRef Name="RoleCode" />
+    </Key>
+    <Property Name="EmployeeIdCardNumber" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleCode" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Equipments">
+    <Key>
+      <PropertyRef Name="EquipmentId" />
+    </Key>
+    <Property Name="EquipmentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EquipmentDate" Type="date" />
+    <Property Name="EquipmentType_fk" Type="uniqueidentifier" />
+    <Property Name="EquipmentRemarks" Type="varchar" MaxLength="50" />
+    <Property Name="PatientId_fk" Type="int" />
+  </EntityType>
+  <EntityType Name="EquipmentTypes">
+    <Key>
+      <PropertyRef Name="EquipmentTypeId" />
+    </Key>
+    <Property Name="EquipmentTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EquipmentTypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FamilySocials">
+    <Key>
+      <PropertyRef Name="FamilySocialId" />
+    </Key>
+    <Property Name="FamilySocialId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SocialPatientStatus_fk" Type="uniqueidentifier" />
+    <Property Name="SocialOccupation_fk" Type="uniqueidentifier" />
+    <Property Name="SocialAccommodations_fk" Type="uniqueidentifier" />
+    <Property Name="SocialNoOfChildren" Type="int" />
+    <Property Name="SocialProblems" Type="varchar" MaxLength="50" />
+    <Property Name="FamilyHistory" Type="varchar" MaxLength="100" />
+    <Property Name="PatientId_fk" Type="int" />
+    <Property Name="SocialNumberOfFloors" Type="int" />
+  </EntityType>
+  <EntityType Name="FileStatuses">
+    <Key>
+      <PropertyRef Name="FileStatusId" />
+    </Key>
+    <Property Name="FileStatusId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FileStatusName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FunctionalAssesments">
+    <Key>
+      <PropertyRef Name="FunctionalAssesmentId" />
+    </Key>
+    <Property Name="FunctionalAssesmentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FunctionalAssesmentType" Type="int" Nullable="false" />
+    <Property Name="FunctionalAssesmentDescription" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientId_fk" Type="int" Nullable="false" />
+    <Property Name="FunctionalAssesmentDisable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Genders">
+    <Key>
+      <PropertyRef Name="GenderId" />
+    </Key>
+    <Property Name="GenderId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GenderName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GeneralObservations">
+    <Key>
+      <PropertyRef Name="GeneralObservationId" />
+    </Key>
+    <Property Name="GeneralObservationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GeneralObservationType" Type="int" Nullable="false" />
+    <Property Name="GeneralObservationRemarks" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientId_fk" Type="int" Nullable="false" />
+    <Property Name="GeneralObservationDisable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IllnessesMedicals">
+    <Key>
+      <PropertyRef Name="IllnessesMedicalId" />
+    </Key>
+    <Property Name="IllnessesMedicalId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IllnessesDate" Type="date" />
+    <Property Name="IllnessesEventsOfRevelance" Type="varchar" MaxLength="50" />
+    <Property Name="MedicalType_fk" Type="uniqueidentifier" />
+    <Property Name="MedicalDescription" Type="varchar" MaxLength="50" />
+    <Property Name="PatientId_fk" Type="int" />
+  </EntityType>
+  <EntityType Name="Incomes">
+    <Key>
+      <PropertyRef Name="IncomeId" />
+    </Key>
+    <Property Name="IncomeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IncomeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Islands">
+    <Key>
+      <PropertyRef Name="IslandId" />
+    </Key>
+    <Property Name="IslandId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IslandName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Localities">
+    <Key>
+      <PropertyRef Name="LocalityId" />
+    </Key>
+    <Property Name="LocalityId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LocalityName" Type="varchar" MaxLength="50" />
+    <Property Name="Island_fk" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LocationName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MedicalTypes">
+    <Key>
+      <PropertyRef Name="MedicalTypeId" />
+    </Key>
+    <Property Name="MedicalTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MedicalTypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Medications">
+    <Key>
+      <PropertyRef Name="MedicationId" />
+    </Key>
+    <Property Name="MedicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MedicationDate" Type="date" />
+    <Property Name="MedicationDescription" Type="varchar" MaxLength="50" />
+    <Property Name="PatientId_fk" Type="int" />
+  </EntityType>
+  <EntityType Name="NextOfKin">
+    <Key>
+      <PropertyRef Name="NextOfKinId" />
+    </Key>
+    <Property Name="NextOfKinId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Personfk" Type="uniqueidentifier" />
+    <Property Name="Relation_fk" Type="uniqueidentifier" />
+    <Property Name="OtherRelationship" Type="varchar" MaxLength="50" />
+    <Property Name="NextOfKinRemark" Type="varchar" MaxLength="50" />
+    <Property Name="PrimaryRelation" Type="bit" />
+    <Property Name="ContactRelation" Type="bit" />
+    <Property Name="PatientId_fk" Type="int" />
+    <Property Name="supportNetworkRelation" Type="bit" />
+  </EntityType>
+  <EntityType Name="Occupations">
+    <Key>
+      <PropertyRef Name="OccupationId" />
+    </Key>
+    <Property Name="OccupationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OccupationName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OriginOfReferrals">
+    <Key>
+      <PropertyRef Name="OriginOfReferralId" />
+    </Key>
+    <Property Name="OriginOfReferralId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OriginOfReferralName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PatientAssesment">
+    <Key>
+      <PropertyRef Name="PatientAssesmentId" />
+    </Key>
+    <Property Name="Type" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Grade" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Remark" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientAssesmentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PatientId_fk" Type="int" />
+  </EntityType>
+  <EntityType Name="PatientAssessmentGrades">
+    <Key>
+      <PropertyRef Name="PatientAssessmentGradeId" />
+    </Key>
+    <Property Name="PatientAssessmentGradeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PatientAssessmentGradeName" Type="varchar" MaxLength="50" />
+    <Property Name="PatientAssessmentTypeId_fk" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="PatientAssessmentTypes">
+    <Key>
+      <PropertyRef Name="PatientAssesmentTypeId" />
+    </Key>
+    <Property Name="PatientAssesmentTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PatientAssessmentTypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PatientAwareness">
+    <Key>
+      <PropertyRef Name="PatientAwareId" />
+    </Key>
+    <Property Name="PatientAwareId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PatientAwareName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Patients">
+    <Key>
+      <PropertyRef Name="FileNumber" />
+    </Key>
+    <Property Name="FileNumber" Type="int" Nullable="false" />
+    <Property Name="DateOfFirstContact" Type="datetime" Nullable="false" />
+    <Property Name="OriginOfReferral_fk" Type="uniqueidentifier" />
+    <Property Name="DeceasedPlace_fk" Type="uniqueidentifier" />
+    <Property Name="DeceasedDate" Type="datetime" />
+    <Property Name="DeceasedPlaceOther" Type="varchar" MaxLength="50" />
+    <Property Name="Oncologist_fk" Type="uniqueidentifier" />
+    <Property Name="Consultant_fk" Type="uniqueidentifier" />
+    <Property Name="Religion" Type="varchar" MaxLength="100" />
+    <Property Name="Diagnosis_fk" Type="uniqueidentifier" />
+    <Property Name="PatientAware_fk" Type="uniqueidentifier" />
+    <Property Name="RelativesAware_fk" Type="uniqueidentifier" />
+    <Property Name="FamilyDoctor_fk" Type="uniqueidentifier" />
+    <Property Name="DateCreated" Type="date" Nullable="false" />
+    <Property Name="FileStatus_fk" Type="uniqueidentifier" />
+    <Property Name="Personfk" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="PatientsEmployees">
+    <Key>
+      <PropertyRef Name="PatientFileNumber_fk" />
+      <PropertyRef Name="EmployeeId_fk" />
+      <PropertyRef Name="PatientDate" />
+    </Key>
+    <Property Name="PatientFileNumber_fk" Type="int" Nullable="false" />
+    <Property Name="EmployeeId_fk" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PatientDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PatientsIncomes">
+    <Key>
+      <PropertyRef Name="IncomeIdFk" />
+      <PropertyRef Name="FamilySocialIdFk" />
+      <PropertyRef Name="LogDate" />
+    </Key>
+    <Property Name="IncomeIdFk" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FamilySocialIdFk" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LogDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PatientStatuses">
+    <Key>
+      <PropertyRef Name="PatientStatusId" />
+    </Key>
+    <Property Name="PatientStatusId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PatientStatusName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Persons">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="PersonID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Gender_fk" Type="varchar" MaxLength="50" />
+    <Property Name="PassportNumber" Type="varchar" MaxLength="100" />
+    <Property Name="TelephoneNo" Type="int" />
+    <Property Name="MobileNo" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Property_fk" Type="uniqueidentifier" />
+    <Property Name="Title_fk" Type="uniqueidentifier" />
+    <Property Name="IdCardNumber" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Physiotherapies">
+    <Key>
+      <PropertyRef Name="PhysiotherapyId" />
+    </Key>
+    <Property Name="PhysiotherapyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PhysiotherapyType" Type="int" Nullable="false" />
+    <Property Name="PhysiotherapyRemarks" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationIdPhy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PatientId_fk" Type="int" Nullable="false" />
+    <Property Name="PhysiotherapyDisable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Problems">
+    <Key>
+      <PropertyRef Name="ProblemsId" />
+    </Key>
+    <Property Name="ProblemsId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProblemsType" Type="int" Nullable="false" />
+    <Property Name="ProblemsDescription" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientId_fk" Type="int" Nullable="false" />
+    <Property Name="ProblemsDisable" Type="bit" />
+  </EntityType>
+  <EntityType Name="Properties">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyName" Type="varchar" MaxLength="50" />
+    <Property Name="Street_fk" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Relations">
+    <Key>
+      <PropertyRef Name="RelationId" />
+    </Key>
+    <Property Name="RelationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RelationName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RelativeAwareness">
+    <Key>
+      <PropertyRef Name="RelativeAwareId" />
+    </Key>
+    <Property Name="RelativeAwareId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RelativeAwareName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleCode" />
+    </Key>
+    <Property Name="RoleCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleId" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Streets">
+    <Key>
+      <PropertyRef Name="StreetId" />
+    </Key>
+    <Property Name="StreetId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StreetName" Type="varchar" MaxLength="50" />
+    <Property Name="Locality_fk" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Symptomatologies">
+    <Key>
+      <PropertyRef Name="SymptomatologyId" />
+    </Key>
+    <Property Name="SymptomatologyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PatientId_fk" Type="int" Nullable="false" />
+    <Property Name="SymptomatologyType" Type="int" Nullable="false" />
+    <Property Name="SymptomatologyGrade" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SymptomatologyRemark" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationIdSym" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SymptomatologyDisable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Titles">
+    <Key>
+      <PropertyRef Name="TitleId" />
+    </Key>
+    <Property Name="TitleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TitleName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WorkTypes">
+    <Key>
+      <PropertyRef Name="WorkTypeId" />
+    </Key>
+    <Property Name="WorkTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="WorkTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AllergiesSpirituals_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="AllergiesSpirituals" Type="Self.AllergiesSpirituals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="AllergiesSpirituals">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assesments_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="Assessments" Type="Self.Assessments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Assessments">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assessments_AssessmentOrigins">
+    <End Role="AssessmentOrigins" Type="Self.AssessmentOrigins" Multiplicity="0..1" />
+    <End Role="Assessments" Type="Self.Assessments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentOrigins">
+        <PropertyRef Name="AssesmentOriginId" />
+      </Principal>
+      <Dependent Role="Assessments">
+        <PropertyRef Name="Origin_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assessments_AssessmentTypes">
+    <End Role="AssessmentTypes" Type="Self.AssessmentTypes" Multiplicity="0..1" />
+    <End Role="Assessments" Type="Self.Assessments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentTypes">
+        <PropertyRef Name="AssesmentTypeId" />
+      </Principal>
+      <Dependent Role="Assessments">
+        <PropertyRef Name="AssesmentType_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assessments_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Assessments" Type="Self.Assessments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeesId" />
+      </Principal>
+      <Dependent Role="Assessments">
+        <PropertyRef Name="Worker_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarePlans_CarePlanStatuses">
+    <End Role="CarePlanStatuses" Type="Self.CarePlanStatuses" Multiplicity="1" />
+    <End Role="CarePlans" Type="Self.CarePlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarePlanStatuses">
+        <PropertyRef Name="CarePlanStatusId" />
+      </Principal>
+      <Dependent Role="CarePlans">
+        <PropertyRef Name="CarePlanStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarePlans_CarePlanTypes">
+    <End Role="CarePlanTypes" Type="Self.CarePlanTypes" Multiplicity="1" />
+    <End Role="CarePlans" Type="Self.CarePlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarePlanTypes">
+        <PropertyRef Name="CarePlanTypeId" />
+      </Principal>
+      <Dependent Role="CarePlans">
+        <PropertyRef Name="CarePlanType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarePlans_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="CarePlans" Type="Self.CarePlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="CarePlans">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaseConferances_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="CaseConferances" Type="Self.CaseConferances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="CaseConferances">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiagnosisPatients_DiagnosisTypes">
+    <End Role="DiagnosisTypes" Type="Self.DiagnosisTypes" Multiplicity="0..1" />
+    <End Role="DiagnosisPatients" Type="Self.DiagnosisPatients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DiagnosisTypes">
+        <PropertyRef Name="DiagnosisId" />
+      </Principal>
+      <Dependent Role="DiagnosisPatients">
+        <PropertyRef Name="DiagnosisType_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctors_DoctorTypes">
+    <End Role="DoctorTypes" Type="Self.DoctorTypes" Multiplicity="0..1" />
+    <End Role="Doctors" Type="Self.Doctors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DoctorTypes">
+        <PropertyRef Name="DoctorTypeId" />
+      </Principal>
+      <Dependent Role="Doctors">
+        <PropertyRef Name="DoctorType_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctors_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Doctors" Type="Self.Doctors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeesId" />
+      </Principal>
+      <Dependent Role="Doctors">
+        <PropertyRef Name="DEmployeeId_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctors_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="Doctors" Type="Self.Doctors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Doctors">
+        <PropertyRef Name="PatientId_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_NextOfKin">
+    <End Role="NextOfKin" Type="Self.NextOfKin" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NextOfKin">
+        <PropertyRef Name="NextOfKinId" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="NextOfKin_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Occupations">
+    <End Role="Occupations" Type="Self.Occupations" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Occupations">
+        <PropertyRef Name="OccupationId" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Occupations_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Persons">
+    <End Role="Persons" Type="Self.Persons" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persons">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Personfk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_WorkTypes">
+    <End Role="WorkTypes" Type="Self.WorkTypes" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkTypes">
+        <PropertyRef Name="WorkTypeId" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="WorkTypes_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeesRoles_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="EmployeesRoles" Type="Self.EmployeesRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeesId" />
+      </Principal>
+      <Dependent Role="EmployeesRoles">
+        <PropertyRef Name="EmployeeIdCardNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeesRoles_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="EmployeesRoles" Type="Self.EmployeesRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleCode" />
+      </Principal>
+      <Dependent Role="EmployeesRoles">
+        <PropertyRef Name="RoleCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipments_EquipmentTypes">
+    <End Role="EquipmentTypes" Type="Self.EquipmentTypes" Multiplicity="0..1" />
+    <End Role="Equipments" Type="Self.Equipments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquipmentTypes">
+        <PropertyRef Name="EquipmentTypeId" />
+      </Principal>
+      <Dependent Role="Equipments">
+        <PropertyRef Name="EquipmentType_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipments_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="Equipments" Type="Self.Equipments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Equipments">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FamilySocials_Accommodations">
+    <End Role="Accommodations" Type="Self.Accommodations" Multiplicity="0..1" />
+    <End Role="FamilySocials" Type="Self.FamilySocials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accommodations">
+        <PropertyRef Name="AccommodationId" />
+      </Principal>
+      <Dependent Role="FamilySocials">
+        <PropertyRef Name="SocialAccommodations_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FamilySocials_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="FamilySocials" Type="Self.FamilySocials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="FamilySocials">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FamilySocials_PatientStatuses">
+    <End Role="PatientStatuses" Type="Self.PatientStatuses" Multiplicity="0..1" />
+    <End Role="FamilySocials" Type="Self.FamilySocials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientStatuses">
+        <PropertyRef Name="PatientStatusId" />
+      </Principal>
+      <Dependent Role="FamilySocials">
+        <PropertyRef Name="SocialPatientStatus_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionalAssesments_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+    <End Role="FunctionalAssesments" Type="Self.FunctionalAssesments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="FunctionalAssesments">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GeneralObservations_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+    <End Role="GeneralObservations" Type="Self.GeneralObservations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="GeneralObservations">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IllnessesMedicals_MedicalTypes">
+    <End Role="MedicalTypes" Type="Self.MedicalTypes" Multiplicity="0..1" />
+    <End Role="IllnessesMedicals" Type="Self.IllnessesMedicals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalTypes">
+        <PropertyRef Name="MedicalTypeId" />
+      </Principal>
+      <Dependent Role="IllnessesMedicals">
+        <PropertyRef Name="MedicalType_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IllnessesMedicals_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="IllnessesMedicals" Type="Self.IllnessesMedicals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="IllnessesMedicals">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Localities_Islands">
+    <End Role="Islands" Type="Self.Islands" Multiplicity="0..1" />
+    <End Role="Localities" Type="Self.Localities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Islands">
+        <PropertyRef Name="IslandId" />
+      </Principal>
+      <Dependent Role="Localities">
+        <PropertyRef Name="Island_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medications_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="Medications" Type="Self.Medications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Medications">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NextOfKin_Persons">
+    <End Role="Persons" Type="Self.Persons" Multiplicity="0..1" />
+    <End Role="NextOfKin" Type="Self.NextOfKin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persons">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="NextOfKin">
+        <PropertyRef Name="Personfk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NextOfKin_Relations">
+    <End Role="Relations" Type="Self.Relations" Multiplicity="0..1" />
+    <End Role="NextOfKin" Type="Self.NextOfKin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Relations">
+        <PropertyRef Name="RelationId" />
+      </Principal>
+      <Dependent Role="NextOfKin">
+        <PropertyRef Name="Relation_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientAssesment_PatientAssessmentGrades">
+    <End Role="PatientAssessmentGrades" Type="Self.PatientAssessmentGrades" Multiplicity="1" />
+    <End Role="PatientAssesment" Type="Self.PatientAssesment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientAssessmentGrades">
+        <PropertyRef Name="PatientAssessmentGradeId" />
+      </Principal>
+      <Dependent Role="PatientAssesment">
+        <PropertyRef Name="Grade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientAssesment_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+    <End Role="PatientAssesment" Type="Self.PatientAssesment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="PatientAssesment">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientAssessmentGrades_PatientAssessmentTypes">
+    <End Role="PatientAssessmentTypes" Type="Self.PatientAssessmentTypes" Multiplicity="0..1" />
+    <End Role="PatientAssessmentGrades" Type="Self.PatientAssessmentGrades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientAssessmentTypes">
+        <PropertyRef Name="PatientAssesmentTypeId" />
+      </Principal>
+      <Dependent Role="PatientAssessmentGrades">
+        <PropertyRef Name="PatientAssessmentTypeId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_DeceasedPlaces">
+    <End Role="DeceasedPlaces" Type="Self.DeceasedPlaces" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeceasedPlaces">
+        <PropertyRef Name="DeceasedplaceId" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="DeceasedPlace_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_DiagnosisPatients">
+    <End Role="DiagnosisPatients" Type="Self.DiagnosisPatients" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DiagnosisPatients">
+        <PropertyRef Name="DiagnosisId" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="Diagnosis_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_FileStatuses">
+    <End Role="FileStatuses" Type="Self.FileStatuses" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FileStatuses">
+        <PropertyRef Name="FileStatusId" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="FileStatus_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_OriginOfReferrals">
+    <End Role="OriginOfReferrals" Type="Self.OriginOfReferrals" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OriginOfReferrals">
+        <PropertyRef Name="OriginOfReferralId" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="OriginOfReferral_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_PatientAwareness">
+    <End Role="PatientAwareness" Type="Self.PatientAwareness" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientAwareness">
+        <PropertyRef Name="PatientAwareId" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="PatientAware_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_Persons">
+    <End Role="Persons" Type="Self.Persons" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persons">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="Personfk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_RelativeAwareness">
+    <End Role="RelativeAwareness" Type="Self.RelativeAwareness" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RelativeAwareness">
+        <PropertyRef Name="RelativeAwareId" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="RelativesAware_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientsEmployees_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="PatientsEmployees" Type="Self.PatientsEmployees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeesId" />
+      </Principal>
+      <Dependent Role="PatientsEmployees">
+        <PropertyRef Name="EmployeeId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientsEmployees_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+    <End Role="PatientsEmployees" Type="Self.PatientsEmployees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="PatientsEmployees">
+        <PropertyRef Name="PatientFileNumber_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientsIncomes_FamilySocials">
+    <End Role="FamilySocials" Type="Self.FamilySocials" Multiplicity="1" />
+    <End Role="PatientsIncomes" Type="Self.PatientsIncomes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FamilySocials">
+        <PropertyRef Name="FamilySocialId" />
+      </Principal>
+      <Dependent Role="PatientsIncomes">
+        <PropertyRef Name="FamilySocialIdFk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientsIncomes_Incomes">
+    <End Role="Incomes" Type="Self.Incomes" Multiplicity="1" />
+    <End Role="PatientsIncomes" Type="Self.PatientsIncomes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Incomes">
+        <PropertyRef Name="IncomeId" />
+      </Principal>
+      <Dependent Role="PatientsIncomes">
+        <PropertyRef Name="IncomeIdFk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persons_Genders">
+    <End Role="Genders" Type="Self.Genders" Multiplicity="0..1" />
+    <End Role="Persons" Type="Self.Persons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genders">
+        <PropertyRef Name="GenderId" />
+      </Principal>
+      <Dependent Role="Persons">
+        <PropertyRef Name="Gender_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persons_Properties">
+    <End Role="Properties" Type="Self.Properties" Multiplicity="0..1" />
+    <End Role="Persons" Type="Self.Persons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Properties">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="Persons">
+        <PropertyRef Name="Property_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persons_Titles">
+    <End Role="Titles" Type="Self.Titles" Multiplicity="0..1" />
+    <End Role="Persons" Type="Self.Persons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Titles">
+        <PropertyRef Name="TitleId" />
+      </Principal>
+      <Dependent Role="Persons">
+        <PropertyRef Name="Title_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Physiotherapies_Locations">
+    <End Role="Locations" Type="Self.Locations" Multiplicity="1" />
+    <End Role="Physiotherapies" Type="Self.Physiotherapies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Physiotherapies">
+        <PropertyRef Name="LocationIdPhy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Physiotherapies_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+    <End Role="Physiotherapies" Type="Self.Physiotherapies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Physiotherapies">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Problems_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+    <End Role="Problems" Type="Self.Problems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Problems">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Streets">
+    <End Role="Streets" Type="Self.Streets" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Streets">
+        <PropertyRef Name="StreetId" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="Street_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Streets_Localities">
+    <End Role="Localities" Type="Self.Localities" Multiplicity="0..1" />
+    <End Role="Streets" Type="Self.Streets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localities">
+        <PropertyRef Name="LocalityId" />
+      </Principal>
+      <Dependent Role="Streets">
+        <PropertyRef Name="Locality_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Symptomatologies_Locations">
+    <End Role="Locations" Type="Self.Locations" Multiplicity="1" />
+    <End Role="Symptomatologies" Type="Self.Symptomatologies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Symptomatologies">
+        <PropertyRef Name="LocationIdSym" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Symptomatologies_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+    <End Role="Symptomatologies" Type="Self.Symptomatologies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="FileNumber" />
+      </Principal>
+      <Dependent Role="Symptomatologies">
+        <PropertyRef Name="PatientId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HospiceSysModelStoreContainer">
+    <EntitySet Name="Accommodations" EntityType="Self.Accommodations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AllergiesSpirituals" EntityType="Self.AllergiesSpirituals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentOrigins" EntityType="Self.AssessmentOrigins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Assessments" EntityType="Self.Assessments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentTypes" EntityType="Self.AssessmentTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CarePlans" EntityType="Self.CarePlans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CarePlanStatuses" EntityType="Self.CarePlanStatuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CarePlanTypes" EntityType="Self.CarePlanTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CaseConferances" EntityType="Self.CaseConferances" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeceasedPlaces" EntityType="Self.DeceasedPlaces" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiagnosisPatients" EntityType="Self.DiagnosisPatients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiagnosisTypes" EntityType="Self.DiagnosisTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctors" EntityType="Self.Doctors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoctorTypes" EntityType="Self.DoctorTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeesRoles" EntityType="Self.EmployeesRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Equipments" EntityType="Self.Equipments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EquipmentTypes" EntityType="Self.EquipmentTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FamilySocials" EntityType="Self.FamilySocials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileStatuses" EntityType="Self.FileStatuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FunctionalAssesments" EntityType="Self.FunctionalAssesments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genders" EntityType="Self.Genders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GeneralObservations" EntityType="Self.GeneralObservations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IllnessesMedicals" EntityType="Self.IllnessesMedicals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Incomes" EntityType="Self.Incomes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Islands" EntityType="Self.Islands" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Localities" EntityType="Self.Localities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedicalTypes" EntityType="Self.MedicalTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medications" EntityType="Self.Medications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NextOfKin" EntityType="Self.NextOfKin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Occupations" EntityType="Self.Occupations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OriginOfReferrals" EntityType="Self.OriginOfReferrals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientAssesment" EntityType="Self.PatientAssesment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientAssessmentGrades" EntityType="Self.PatientAssessmentGrades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientAssessmentTypes" EntityType="Self.PatientAssessmentTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientAwareness" EntityType="Self.PatientAwareness" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientsEmployees" EntityType="Self.PatientsEmployees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientsIncomes" EntityType="Self.PatientsIncomes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientStatuses" EntityType="Self.PatientStatuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Physiotherapies" EntityType="Self.Physiotherapies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Problems" EntityType="Self.Problems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Properties" EntityType="Self.Properties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Relations" EntityType="Self.Relations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RelativeAwareness" EntityType="Self.RelativeAwareness" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Streets" EntityType="Self.Streets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Symptomatologies" EntityType="Self.Symptomatologies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Titles" EntityType="Self.Titles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkTypes" EntityType="Self.WorkTypes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AllergiesSpirituals_Patients" Association="Self.FK_AllergiesSpirituals_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="AllergiesSpirituals" EntitySet="AllergiesSpirituals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assesments_Patients" Association="Self.FK_Assesments_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Assessments" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assessments_AssessmentOrigins" Association="Self.FK_Assessments_AssessmentOrigins">
+      <End Role="AssessmentOrigins" EntitySet="AssessmentOrigins" />
+      <End Role="Assessments" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assessments_AssessmentTypes" Association="Self.FK_Assessments_AssessmentTypes">
+      <End Role="AssessmentTypes" EntitySet="AssessmentTypes" />
+      <End Role="Assessments" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assessments_Employees" Association="Self.FK_Assessments_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Assessments" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarePlans_CarePlanStatuses" Association="Self.FK_CarePlans_CarePlanStatuses">
+      <End Role="CarePlanStatuses" EntitySet="CarePlanStatuses" />
+      <End Role="CarePlans" EntitySet="CarePlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarePlans_CarePlanTypes" Association="Self.FK_CarePlans_CarePlanTypes">
+      <End Role="CarePlanTypes" EntitySet="CarePlanTypes" />
+      <End Role="CarePlans" EntitySet="CarePlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarePlans_Patients" Association="Self.FK_CarePlans_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="CarePlans" EntitySet="CarePlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaseConferances_Patients" Association="Self.FK_CaseConferances_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="CaseConferances" EntitySet="CaseConferances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiagnosisPatients_DiagnosisTypes" Association="Self.FK_DiagnosisPatients_DiagnosisTypes">
+      <End Role="DiagnosisTypes" EntitySet="DiagnosisTypes" />
+      <End Role="DiagnosisPatients" EntitySet="DiagnosisPatients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctors_DoctorTypes" Association="Self.FK_Doctors_DoctorTypes">
+      <End Role="DoctorTypes" EntitySet="DoctorTypes" />
+      <End Role="Doctors" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctors_Employees" Association="Self.FK_Doctors_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Doctors" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctors_Patients" Association="Self.FK_Doctors_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Doctors" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_NextOfKin" Association="Self.FK_Employees_NextOfKin">
+      <End Role="NextOfKin" EntitySet="NextOfKin" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Occupations" Association="Self.FK_Employees_Occupations">
+      <End Role="Occupations" EntitySet="Occupations" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Persons" Association="Self.FK_Employees_Persons">
+      <End Role="Persons" EntitySet="Persons" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_WorkTypes" Association="Self.FK_Employees_WorkTypes">
+      <End Role="WorkTypes" EntitySet="WorkTypes" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeesRoles_Employees" Association="Self.FK_EmployeesRoles_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeesRoles" EntitySet="EmployeesRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeesRoles_Roles" Association="Self.FK_EmployeesRoles_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="EmployeesRoles" EntitySet="EmployeesRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipments_EquipmentTypes" Association="Self.FK_Equipments_EquipmentTypes">
+      <End Role="EquipmentTypes" EntitySet="EquipmentTypes" />
+      <End Role="Equipments" EntitySet="Equipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipments_Patients" Association="Self.FK_Equipments_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Equipments" EntitySet="Equipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FamilySocials_Accommodations" Association="Self.FK_FamilySocials_Accommodations">
+      <End Role="Accommodations" EntitySet="Accommodations" />
+      <End Role="FamilySocials" EntitySet="FamilySocials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FamilySocials_Patients" Association="Self.FK_FamilySocials_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="FamilySocials" EntitySet="FamilySocials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FamilySocials_PatientStatuses" Association="Self.FK_FamilySocials_PatientStatuses">
+      <End Role="PatientStatuses" EntitySet="PatientStatuses" />
+      <End Role="FamilySocials" EntitySet="FamilySocials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionalAssesments_Patients" Association="Self.FK_FunctionalAssesments_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="FunctionalAssesments" EntitySet="FunctionalAssesments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GeneralObservations_Patients" Association="Self.FK_GeneralObservations_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="GeneralObservations" EntitySet="GeneralObservations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IllnessesMedicals_MedicalTypes" Association="Self.FK_IllnessesMedicals_MedicalTypes">
+      <End Role="MedicalTypes" EntitySet="MedicalTypes" />
+      <End Role="IllnessesMedicals" EntitySet="IllnessesMedicals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IllnessesMedicals_Patients" Association="Self.FK_IllnessesMedicals_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="IllnessesMedicals" EntitySet="IllnessesMedicals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Localities_Islands" Association="Self.FK_Localities_Islands">
+      <End Role="Islands" EntitySet="Islands" />
+      <End Role="Localities" EntitySet="Localities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medications_Patients" Association="Self.FK_Medications_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Medications" EntitySet="Medications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NextOfKin_Persons" Association="Self.FK_NextOfKin_Persons">
+      <End Role="Persons" EntitySet="Persons" />
+      <End Role="NextOfKin" EntitySet="NextOfKin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NextOfKin_Relations" Association="Self.FK_NextOfKin_Relations">
+      <End Role="Relations" EntitySet="Relations" />
+      <End Role="NextOfKin" EntitySet="NextOfKin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientAssesment_PatientAssessmentGrades" Association="Self.FK_PatientAssesment_PatientAssessmentGrades">
+      <End Role="PatientAssessmentGrades" EntitySet="PatientAssessmentGrades" />
+      <End Role="PatientAssesment" EntitySet="PatientAssesment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientAssesment_Patients" Association="Self.FK_PatientAssesment_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="PatientAssesment" EntitySet="PatientAssesment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientAssessmentGrades_PatientAssessmentTypes" Association="Self.FK_PatientAssessmentGrades_PatientAssessmentTypes">
+      <End Role="PatientAssessmentTypes" EntitySet="PatientAssessmentTypes" />
+      <End Role="PatientAssessmentGrades" EntitySet="PatientAssessmentGrades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_DeceasedPlaces" Association="Self.FK_Patients_DeceasedPlaces">
+      <End Role="DeceasedPlaces" EntitySet="DeceasedPlaces" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_DiagnosisPatients" Association="Self.FK_Patients_DiagnosisPatients">
+      <End Role="DiagnosisPatients" EntitySet="DiagnosisPatients" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_FileStatuses" Association="Self.FK_Patients_FileStatuses">
+      <End Role="FileStatuses" EntitySet="FileStatuses" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_OriginOfReferrals" Association="Self.FK_Patients_OriginOfReferrals">
+      <End Role="OriginOfReferrals" EntitySet="OriginOfReferrals" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_PatientAwareness" Association="Self.FK_Patients_PatientAwareness">
+      <End Role="PatientAwareness" EntitySet="PatientAwareness" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_Persons" Association="Self.FK_Patients_Persons">
+      <End Role="Persons" EntitySet="Persons" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_RelativeAwareness" Association="Self.FK_Patients_RelativeAwareness">
+      <End Role="RelativeAwareness" EntitySet="RelativeAwareness" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientsEmployees_Employees" Association="Self.FK_PatientsEmployees_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="PatientsEmployees" EntitySet="PatientsEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientsEmployees_Patients" Association="Self.FK_PatientsEmployees_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="PatientsEmployees" EntitySet="PatientsEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientsIncomes_FamilySocials" Association="Self.FK_PatientsIncomes_FamilySocials">
+      <End Role="FamilySocials" EntitySet="FamilySocials" />
+      <End Role="PatientsIncomes" EntitySet="PatientsIncomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientsIncomes_Incomes" Association="Self.FK_PatientsIncomes_Incomes">
+      <End Role="Incomes" EntitySet="Incomes" />
+      <End Role="PatientsIncomes" EntitySet="PatientsIncomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persons_Genders" Association="Self.FK_Persons_Genders">
+      <End Role="Genders" EntitySet="Genders" />
+      <End Role="Persons" EntitySet="Persons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persons_Properties" Association="Self.FK_Persons_Properties">
+      <End Role="Properties" EntitySet="Properties" />
+      <End Role="Persons" EntitySet="Persons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persons_Titles" Association="Self.FK_Persons_Titles">
+      <End Role="Titles" EntitySet="Titles" />
+      <End Role="Persons" EntitySet="Persons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Physiotherapies_Locations" Association="Self.FK_Physiotherapies_Locations">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Physiotherapies" EntitySet="Physiotherapies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Physiotherapies_Patients" Association="Self.FK_Physiotherapies_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Physiotherapies" EntitySet="Physiotherapies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Problems_Patients" Association="Self.FK_Problems_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Problems" EntitySet="Problems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Streets" Association="Self.FK_Properties_Streets">
+      <End Role="Streets" EntitySet="Streets" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Streets_Localities" Association="Self.FK_Streets_Localities">
+      <End Role="Localities" EntitySet="Localities" />
+      <End Role="Streets" EntitySet="Streets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Symptomatologies_Locations" Association="Self.FK_Symptomatologies_Locations">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Symptomatologies" EntitySet="Symptomatologies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Symptomatologies_Patients" Association="Self.FK_Symptomatologies_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Symptomatologies" EntitySet="Symptomatologies" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

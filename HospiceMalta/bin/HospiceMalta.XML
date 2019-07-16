@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HospiceMalta</name>
+    </assembly>
+    <members>
+        <member name="T:HospiceMalta.Controllers.AssessmentsApiController">
+            <summary>
+            Handles Assessment information.
+            </summary>
+        </member>
+        <member name="M:HospiceMalta.Controllers.AssessmentsApiController.GetAssessments">
+            <summary>
+            Returns all the Asssessments in the database.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.AssessmentsApiController.GetAssessmentTypes">
+            <summary>
+            Returns all the Assessment Types in the database so as to populate the Dropdown of the same name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.AssessmentsApiController.GetAssessmentOrigins">
+            <summary>
+            Returns all the Assessment Origins in the database so as to popualte the Dropdown of the same name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.AssessmentsApiController.GetAssessmentWorkers">
+            <summary>
+            Returns all the Employees in the database so as to populate the Dropdown of the same name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.AssessmentsApiController.GetAssessment(System.Guid)">
+            <summary>
+            Returns an assessment with the corresponding Assessment ID, to fill the input fields on the page.
+            </summary>
+            <param name="assid">The Assessment's ID to to search for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.AssessmentsApiController.GetAssessmentsOfPatient(System.Int32)">
+            <summary>
+            Returns all the Assessments of a particular Patient.
+            </summary>
+            <param name="patid">The Patient's file-number to use to filter the results returned.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.CarePlanApiController.GetCarePlans">
+            <summary>
+            Returns all the Care Plans in the database.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.CarePlanApiController.GetCarePlanTypes">
+            <summary>
+            Returns all the Care Plan types to populate the Drop down list of the same name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.CarePlanApiController.GetCarePlanStatuses">
+            <summary>
+            Returns all the Care Plan statuses to populate the Drop down list of the same name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.CarePlanApiController.GetCarePlan(System.Guid)">
+            <summary>
+            Returns a Care Plan with the matching Care Plan ID from the database to fill the input fields on the page with.
+            </summary>
+            <param name="cpid">The Care Plan ID to search for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.CarePlanApiController.GetCarePlansOfPatient(System.Int32)">
+            <summary>
+            Returns all the Care Plans of a particular patient.
+            </summary>
+            <param name="patid">The Patient's file number to filter by.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.PatientAssessmentsApiController.GetPatientAssessments">
+            <summary>
+            Returns all Patient Assessments in the database.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.PatientAssessmentsApiController.GetPatientAssessmentTypes">
+            <summary>
+            Returns all Patient Assessment types in the database to populate the Drop Down list of the same name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.PatientAssessmentsApiController.GetPatientAssessmentGrades">
+            <summary>
+            Returns all Patient Assessment grades in the database to popluate the Drop Down list of the same name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.PatientAssessmentsApiController.GetPatientAssessmentTypeGrades(System.Guid)">
+            <summary>
+            Returns all Patient Assessment grades associated with the Type ID passed, to populate the Drop Down list after a Type is chosen.
+            </summary>
+            <param name="typeid">The Type ID to filter the results by.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.PatientAssessmentsApiController.GetPatientAssessment(System.Guid)">
+            <summary>
+            Returns a particular Patient Assessment from the database to fill every input field on the page.
+            </summary>
+            <param name="patid">The Patient Assessment's ID to searh for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.PatientAssessmentsApiController.GetPatientAssessmentsOfPatient(System.Int32)">
+            <summary>
+            Returns the Patient Assessments of a particular Patient in the database.
+            </summary>
+            <param name="patid">The Patient ID to filter the results by.</param>
+            <returns></returns>
+        </member>
+        <member name="T:HospiceMalta.Controllers.UsersApiController">
+            <summary>
+            Handles User information
+            </summary>
+        </member>
+        <member name="M:HospiceMalta.Controllers.UsersApiController.GetUserByUsername(System.String)">
+            <summary>
+            Search for users that contain the passed string in their Username.
+            </summary>
+            <param name="username">The Username to search for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.UsersApiController.GetUserById(System.Guid)">
+            <summary>
+            Search for a user with the matching User ID in their User ID.
+            </summary>
+            <param name="userid">The User ID to search for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.UsersApiController.GetAuthenticateUser(System.String,System.String)">
+            <summary>
+            Authenticates that the login credentials match and exist in the database.
+            </summary>
+            <param name="username">The username to match.</param>
+            <param name="password">The password to match.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HospiceMalta.Controllers.UsersApiController.GetWorkerEmails">
+            <summary>
+            Returns a list of Employee email addresses to use for the Staff list in the Email modal.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
